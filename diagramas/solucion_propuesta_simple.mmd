@@ -1,0 +1,70 @@
+classDiagram
+    direction RL
+
+    class Vehiculo {
+        +patente [PK]
+        +dv
+        +proveedor
+        +numero_factura
+        +fecha_compra
+        +tipo
+        +condicion
+        +anio
+        +marca
+        +modelo
+        +motor
+        +chassis
+        +color
+        +transmision
+        +combustible
+        +ubicacion_actual
+        +chofer_rut [FK]
+    }
+
+    class Chofer {
+        +rut [PK]
+        +nombre
+        +apellido
+        +telefono
+    }
+
+    class RevisionTecnica {
+        +id [PK]
+        +vehiculo_patente [FK]
+        +fecha_revision
+        +estado ('Aprobada', 'Rechazada', 'Homologada')
+        +observaciones
+    }
+
+    class PermisoCirculacion {
+        +id [PK]
+        +vehiculo_patente [FK]
+        +anio
+        +monto_permiso
+        +monto_soap
+        +fecha_pago
+    }
+
+    class Multa {
+        +id [PK]
+        +vehiculo_patente [FK]
+        +fecha_infraccion
+        +tipo_infraccion
+        +monto
+        +estado_pago ('Pagada', 'Pendiente')
+    }
+    
+    class Gasto {
+        +id [PK]
+        +vehiculo_patente [FK]
+        +fecha
+        +categoria ('Combustible', 'Mantenimiento', 'Peaje')
+        +monto
+        +descripcion
+    }
+
+    Vehiculo "1" -- "0..*" RevisionTecnica : "tiene"
+    Vehiculo "1" -- "0..*" PermisoCirculacion : "tiene"
+    Vehiculo "1" -- "0..*" Multa : "tiene"
+    Vehiculo "1" -- "0..*" Gasto : "registra"
+    Chofer "1" -- "0..*" Vehiculo : "es responsable de"

@@ -1,0 +1,68 @@
+classDiagram
+    direction LR
+
+    class `Maestro: rentacar-GENERAL` {
+        +patente
+        +dv
+        +proveedor
+        +numero_factura
+        +fecha_compra
+        +tipo_vehiculo
+        +condicion
+        +anio
+        +marca
+        +modelo
+        +motor
+        +chassis
+        +color
+        +transmision
+        +combustible
+        +ubicacion_actual
+        +chofer_a_cargo
+    }
+
+    class `Legal 1: Revision_tecnica` {
+        +patente_cruce
+        +marca (Repetido)
+        +modelo (Repetido)
+        +tipo_vehiculo (Repetido)
+        +anio (Repetido)
+        +color (Repetido)
+        +ubicacion_actual (Repetido)
+        +responsable (Repetido)
+        +revision_tecnica_fecha
+        +alertas_estado
+    }
+
+    class `Legal 2: Permiso_circulacion` {
+        +patente_cruce
+        +marca (Repetido)
+        +modelo (Repetido)
+        +anio (Repetido)
+        +empresa_responsable
+        +permiso_2020
+        +soap_2020
+        +permiso_2021
+        +soap_2021
+        +permiso_2022
+        +soap_2022
+        +permiso_2023
+        +soap_2023
+        +multas (Texto libre)
+        ...y más columnas por año
+    }
+
+    class `Gastos: Gasto_combustible` {
+        +patente_cruce
+        +marca (Repetido)
+        +modelo (Repetido)
+        +anio (Repetido)
+        +responsable (Repetido)
+        +tarjeta_copec_por
+        +operativa
+        +monto_mensual
+    }
+
+    `Maestro: rentacar-GENERAL` -- `Legal 1: Revision_tecnica` : "Vinculado por PATENTE"
+    `Maestro: rentacar-GENERAL` -- `Legal 2: Permiso_circulacion` : "Vinculado por PATENTE"
+    `Maestro: rentacar-GENERAL` -- `Gastos: Gasto_combustible` : "Vinculado por PATENTE"
