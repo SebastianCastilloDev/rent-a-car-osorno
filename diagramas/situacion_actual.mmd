@@ -1,0 +1,68 @@
+classDiagram
+    direction LR
+
+    class `Maestro: rentacar-GENERAL` {
+        +String patente
+        +String dv
+        +String proveedor
+        +String numero_factura
+        +Date fecha_compra
+        +String tipo_vehiculo
+        +String condicion
+        +Int anio
+        +String marca
+        +String modelo
+        +String motor
+        +String chassis
+        +String color
+        +String transmision
+        +String combustible
+        +String ubicacion_actual
+        +String chofer_a_cargo
+    }
+
+    class `Legal 1: Revision_tecnica` {
+        +String patente_cruce
+        +String marca (Repetido)
+        +String modelo (Repetido)
+        +String tipo_vehiculo (Repetido)
+        +Int anio (Repetido)
+        +String color (Repetido)
+        +String ubicacion_actual (Repetido)
+        +String responsable (Repetido)
+        +String revision_tecnica_fecha
+        +String alertas_estado
+    }
+
+    class `Legal 2: Permiso_circulacion` {
+        +String patente_cruce
+        +String marca (Repetido)
+        +String modelo (Repetido)
+        +Int anio (Repetido)
+        +String empresa_responsable
+        +String permiso_2020
+        +String soap_2020
+        +String permiso_2021
+        +String soap_2021
+        +String permiso_2022
+        +String soap_2022
+        +String permiso_2023
+        +String soap_2023
+        +String multas (Texto libre)
+        ...y más columnas por año
+    }
+
+    class `Gastos: Gasto_combustible` {
+        +String patente_cruce
+        +String marca (Repetido)
+        +String modelo (Repetido)
+        +Int anio (Repetido)
+        +String responsable (Repetido)
+        +String tarjeta_copec_por
+        +String operativa
+        +Float monto_mensual
+    }
+
+    `Maestro: rentacar-GENERAL` -- `Legal 1: Revision_tecnica` : "Vinculado por PATENTE"
+    `Maestro: rentacar-GENERAL` -- `Legal 2: Permiso_circulacion` : "Vinculado por PATENTE"
+    `Maestro: rentacar-GENERAL` -- `Gastos: Gasto_combustible` : "Vinculado por PATENTE"

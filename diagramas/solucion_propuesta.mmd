@@ -1,0 +1,70 @@
+classDiagram
+    direction RL
+
+    class Vehiculo {
+        +String patente [PK]
+        +String dv
+        +String proveedor
+        +String numero_factura
+        +Date fecha_compra
+        +String tipo
+        +String condicion
+        +Int anio
+        +String marca
+        +String modelo
+        +String motor
+        +String chassis
+        +String color
+        +String transmision
+        +String combustible
+        +String ubicacion_actual
+        +String chofer_rut [FK]
+    }
+
+    class Chofer {
+        +String rut [PK]
+        +String nombre
+        +String apellido
+        +String telefono
+    }
+
+    class RevisionTecnica {
+        +Int id [PK]
+        +String vehiculo_patente [FK]
+        +Date fecha_revision
+        +String estado ('Aprobada', 'Rechazada', 'Homologada')
+        +String observaciones
+    }
+
+    class PermisoCirculacion {
+        +Int id [PK]
+        +String vehiculo_patente [FK]
+        +Int anio
+        +Float monto_permiso
+        +Float monto_soap
+        +Date fecha_pago
+    }
+
+    class Multa {
+        +Int id [PK]
+        +String vehiculo_patente [FK]
+        +Date fecha_infraccion
+        +String tipo_infraccion
+        +Float monto
+        +String estado_pago ('Pagada', 'Pendiente')
+    }
+    
+    class Gasto {
+        +Int id [PK]
+        +String vehiculo_patente [FK]
+        +Date fecha
+        +String categoria ('Combustible', 'Mantenimiento', 'Peaje')
+        +Float monto
+        +String descripcion
+    }
+
+    Vehiculo "1" -- "0..*" RevisionTecnica : "tiene"
+    Vehiculo "1" -- "0..*" PermisoCirculacion : "tiene"
+    Vehiculo "1" -- "0..*" Multa : "tiene"
+    Vehiculo "1" -- "0..*" Gasto : "registra"
+    Chofer "1" -- "0..*" Vehiculo : "es responsable de"
