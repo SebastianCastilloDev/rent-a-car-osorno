@@ -67,8 +67,6 @@ Sistema web que centraliza toda la información en un solo lugar:
 | **Usuarios Ilimitados**    | +$50.000  | Solo si necesitan más de 5 personas usando el sistema                                               |
 | **App Móvil**              | +$350.000 | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real |
 
-**💡 Recomendación:** La mayoría de empresas comienzan con el paquete base y agregan funcionalidades después según van descubriendo qué necesitan.
-
 ---
 
 ## Condiciones
@@ -104,6 +102,6 @@ Si le interesa, agendamos una reunión (1 hora) para:
 **Contacto:**  
 Sebastián Castillo  
 📧 contacto@talonarios.cl  
-📱 +56 9 XXXX XXXX
+📱 +56 9 5610 9322
 
-**Validez:** 30 días | **Precios:** IVA incluido
+**Validez:** 30 días | **Precios:** No Incluye IVA
