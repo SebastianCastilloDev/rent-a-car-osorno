@@ -10,14 +10,14 @@
 
 Actualmente su empresa gestiona **toda su flota con múltiples archivos Excel**, lo que genera:
 
-- 🕐 **Pérdida de tiempo**: Buscar datos entre 4+ archivos diferentes
+- 🕐 **Pérdida de tiempo**: Buscar datos entre 4+ hojas diferentes
 - ⚠️ **Riesgo de multas**: Permisos o revisiones técnicas que se vencen sin avisar
 - 💸 **Sobrecostos ocultos**: Difícil saber cuánto gasta realmente cada vehículo
 - 😰 **Estrés operacional**: No saber en tiempo real el estado de toda la flota
 
 ### Nuestra Solución
 
-Un **sistema web centralizado** que:
+Un **sistema web centralizado** que:  
 ✅ Reemplaza todos sus Excel por una única plataforma  
 ✅ Les **avisa automáticamente** cuando algo está por vencer  
 ✅ Les muestra en un **panel visual** el estado de toda su flota  
