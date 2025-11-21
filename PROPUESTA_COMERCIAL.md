@@ -27,19 +27,19 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 ## Propuesta de Inversión
 
-### Precio Base: **$1.000.000** (pesos chilenos)
+### Precio Base: **$1.000.000** (pesos chilenos) Valor Neto No Incluye IVA
 
 **Incluye:**
 
 - Sistema web completo y funcionando
 - Migración de datos desde sus Excel actuales
 - Capacitación a su equipo (2 sesiones)
-- 3 meses de soporte incluido
+- 1 meses de soporte incluido, después del lanzamiento final
 - Hosting por 1 año
 
-**Tiempo de entrega:** 30 Días desde firma de contrato
+**Tiempo de entrega:** 30 Días desde firma de contrato (plazo estimado de acuerdo a conversación por teams)
 
-**Mantenimiento posterior:** $80.000/mes (hosting + soporte)
+**Mantenimiento posterior:** Sujeto a cambios dependientes de la complejidad de la operación
 
 ---
 
@@ -60,12 +60,12 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 | Funcionalidad              | Costo     | Cuándo conviene                                                        |
 | -------------------------- | --------- | ---------------------------------------------------------------------- |
-| **Gestión de Multas**      | +$200.000 | Si tienen infracciones frecuentes y necesitan control de pagos         |
-| **Control de Choferes**    | +$150.000 | Si rotan choferes y necesitan historial por persona                    |
-| **Dashboard con Gráficos** | +$250.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales    |
-| **Reportes Avanzados**     | +$200.000 | Si el contador necesita exportar datos a Excel con filtros específicos |
-| **Usuarios Ilimitados**    | +$100.000 | Solo si necesitan más de 5 personas usando el sistema                  |
-| **App Móvil**              | +$800.000 | Si los choferes deben registrar gastos desde terreno en tiempo real    |
+| **Gestión de Multas**      | +$150.000 | Si tienen infracciones frecuentes y necesitan control de pagos         |
+| **Control de Choferes**    | +$100.000 | Si rotan choferes y necesitan historial por persona                    |
+| **Dashboard con Gráficos** | +$200.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales    |
+| **Reportes Avanzados**     | +$150.000 | Si el contador necesita exportar datos a Excel con filtros específicos |
+| **Usuarios Ilimitados**    | +$50.000  | Solo si necesitan más de 5 personas usando el sistema                  |
+| **App Móvil**              | +$350.000 | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real    |
 
 **💡 Recomendación:** La mayoría de empresas comienzan con el paquete base y agregan funcionalidades después según van descubriendo qué necesitan.
 
