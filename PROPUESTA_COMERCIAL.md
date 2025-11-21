@@ -21,7 +21,7 @@ Sistema web que centraliza toda la información en un solo lugar:
 - Les avisa automáticamente cuando algo está por vencer
 - Muestra el estado de toda la flota en un panel visual
 - Lleva el registro completo de gastos
-- Se usa desde cualquier computador o tablet
+- Se usa desde cualquier computador o celular con internet
 
 ---
 
@@ -60,12 +60,11 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 | Funcionalidad              | Costo     | Cuándo conviene                                                                                      |
 | -------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| **Sistema de Alarmas**     | +$150.000 | Notificaciones automáticas por correo o sistema cuando se acercan vencimientos o eventos importantes |
-| **Control de Choferes**    | +$100.000 | Si rotan choferes y necesitan historial por persona                                                  |
-| **Dashboard con Gráficos** | +$200.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales                                  |
-| **Reportes Avanzados**     | +$150.000 | Si el contador necesita exportar datos a Excel con filtros específicos                               |
-| **Usuarios Ilimitados**    | +$50.000  | Solo si necesitan más de 5 personas usando el sistema                                                |
-| **App Móvil**              | +$350.000 | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real  |
+| **Sistema de Alarmas**     | +$230.000 | Notificaciones automáticas por correo o sistema cuando se acercan vencimientos o eventos importantes |
+| **Control de Choferes**    | +$180.000 | Si rotan choferes y necesitan historial por persona                                                  |
+| **Dashboard con Gráficos** | +$330.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales                                  |
+| **Reportes Avanzados**     | +$180.000 | Si el contador necesita exportar datos a Excel con filtros específicos                               |
+| **App Móvil Web**          | +$80.000  | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real  |
 
 ---
 
