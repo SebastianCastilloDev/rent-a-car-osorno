@@ -27,7 +27,7 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 ## Propuesta de Inversión
 
-### Precio Base: **$1.000.000** (pesos chilenos) Valor Neto No Incluye IVA
+### Precio Base: **$1.100.000** (pesos chilenos) Valor Neto No Incluye IVA
 
 **Incluye:**
 
@@ -56,6 +56,7 @@ Sistema web que centraliza toda la información en un solo lugar:
 | **Dashboard con Gráficos**  | Panel visual para ver tendencias de gastos y tomar decisiones con datos                                        |
 | **Reportes Avanzados**      | Exportar datos a Excel con filtros específicos para contabilidad                                               |
 | **App Móvil Web**           | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real            |
+| **Registro de Siniestros**  | Control de accidentes y siniestros de vehículos con fecha, descripción, costos y estado de reparación          |
 
 ### Módulo Adicional Disponible
 
