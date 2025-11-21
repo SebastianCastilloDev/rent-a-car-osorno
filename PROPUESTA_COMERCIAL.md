@@ -45,26 +45,17 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 ## ¿Qué Incluye el Sistema?
 
-### ✅ Incluido en $1.000.000
-
-| Funcionalidad               | Por qué es importante                                                                                          |
+| Funcionalidad               | Descripción                                                                                                    |
 | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
 | **Control de Vehículos**    | Toda la información de cada vehículo en un solo lugar (patente, marca, modelo, año, chassis, etc.)             |
 | **Alertas de Vencimientos** | El sistema les avisa automáticamente cuando está por vencer la revisión técnica, permiso de circulación o SOAP |
 | **Registro de Gastos**      | Anotar combustible, mantenciones y peajes. Ver cuánto gasta cada vehículo                                      |
 | **Sistema de Usuarios**     | Hasta 5 personas pueden entrar con su propia clave. Control de quién hace qué                                  |
-
-### ➕ Funcionalidades Opcionales
-
-¿Necesitan algo más específico? Pueden agregar:
-
-| Funcionalidad              | Costo     | Cuándo conviene                                                                                      |
-| -------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
-| **Sistema de Alarmas**     | +$230.000 | Notificaciones automáticas por correo o sistema cuando se acercan vencimientos o eventos importantes |
-| **Control de Choferes**    | +$180.000 | Si rotan choferes y necesitan historial por persona                                                  |
-| **Dashboard con Gráficos** | +$330.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales                                  |
-| **Reportes Avanzados**     | +$180.000 | Si el contador necesita exportar datos a Excel con filtros específicos                               |
-| **App Móvil Web**          | +$80.000  | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real  |
+| **Sistema de Alarmas**      | Notificaciones automáticas por correo o sistema cuando se acercan vencimientos o eventos importantes           |
+| **Control de Choferes**     | Registro completo de choferes con historial por persona y rotación                                             |
+| **Dashboard con Gráficos**  | Panel visual para ver tendencias de gastos y tomar decisiones con datos                                        |
+| **Reportes Avanzados**      | Exportar datos a Excel con filtros específicos para contabilidad                                               |
+| **App Móvil Web**           | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real            |
 
 ---
 
