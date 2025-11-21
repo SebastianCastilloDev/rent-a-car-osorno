@@ -1,6 +1,6 @@
 # Propuesta Comercial - Sistema de Gestión de Flota
 
-**Para:** Empresa Rent-a-Car  
+**Para:** Empresa Rent-a-Car-Osorno
 **Fecha:** Noviembre 2025
 
 ---
@@ -37,7 +37,7 @@ Sistema web que centraliza toda la información en un solo lugar:
 - 3 meses de soporte incluido
 - Hosting por 1 año
 
-**Tiempo de entrega:** 3 meses desde firma de contrato
+**Tiempo de entrega:** 30 Días desde firma de contrato
 
 **Mantenimiento posterior:** $80.000/mes (hosting + soporte)
 
