@@ -43,47 +43,31 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 ---
 
-## Funcionalidades y Trade-offs
+## ¿Qué Incluye el Sistema?
 
-Pueden elegir qué funcionalidades incluir según su presupuesto:
+### ✅ Incluido en $1.000.000
 
-| Funcionalidad                                        | Costo Adicional | ¿Vale la pena?                                                |
-| ---------------------------------------------------- | --------------- | ------------------------------------------------------------- |
-| **✅ INCLUIDO EN PRECIO BASE**                       |
-| Control de vehículos (patente, marca, modelo, etc.)  | Incluido        | Esencial                                                      |
-| Alertas de vencimientos (revisión técnica, permisos) | Incluido        | Evita multas                                                  |
-| Registro básico de gastos                            | Incluido        | Control mínimo                                                |
-| Sistema de usuarios (hasta 5)                        | Incluido        | Seguridad básica                                              |
-| **➕ OPCIONALES (A AGREGAR)**                        |
-| Gestión de multas                                    | +$200.000       | ⭐ Recomendado si tienen muchas infracciones                  |
-| Control detallado de choferes                        | +$150.000       | ⭐ Útil si tienen rotación de choferes                        |
-| Dashboard con gráficos                               | +$250.000       | ⭐⭐ Recomendado para toma de decisiones                      |
-| Reportes avanzados (exportar Excel)                  | +$200.000       | ⭐ Útil para contabilidad                                     |
-| Usuarios ilimitados                                  | +$100.000       | Solo si necesitan más de 5 usuarios                           |
-| App móvil para choferes                              | +$800.000       | ⭐⭐⭐ Solo si choferes necesitan registrar gastos en terreno |
-| Módulo de contratos de arriendo                      | +$600.000       | ⭐⭐ Solo si gestionan arriendos a terceros                   |
-| Integración con contabilidad                         | +$400.000       | ⭐ Solo si su contador lo requiere                            |
+| Funcionalidad               | Por qué es importante                                                                                          |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| **Control de Vehículos**    | Toda la información de cada vehículo en un solo lugar (patente, marca, modelo, año, chassis, etc.)             |
+| **Alertas de Vencimientos** | El sistema les avisa automáticamente cuando está por vencer la revisión técnica, permiso de circulación o SOAP |
+| **Registro de Gastos**      | Anotar combustible, mantenciones y peajes. Ver cuánto gasta cada vehículo                                      |
+| **Sistema de Usuarios**     | Hasta 5 personas pueden entrar con su propia clave. Control de quién hace qué                                  |
 
-**⭐ Nivel de recomendación:** ⭐ = Útil pero no crítico | ⭐⭐ = Muy recomendado | ⭐⭐⭐ = Crítico para operación
+### ➕ Funcionalidades Opcionales
 
----
+¿Necesitan algo más específico? Pueden agregar:
 
-## Ejemplos de Configuración
+| Funcionalidad              | Costo     | Cuándo conviene                                                        |
+| -------------------------- | --------- | ---------------------------------------------------------------------- |
+| **Gestión de Multas**      | +$200.000 | Si tienen infracciones frecuentes y necesitan control de pagos         |
+| **Control de Choferes**    | +$150.000 | Si rotan choferes y necesitan historial por persona                    |
+| **Dashboard con Gráficos** | +$250.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales    |
+| **Reportes Avanzados**     | +$200.000 | Si el contador necesita exportar datos a Excel con filtros específicos |
+| **Usuarios Ilimitados**    | +$100.000 | Solo si necesitan más de 5 personas usando el sistema                  |
+| **App Móvil**              | +$800.000 | Si los choferes deben registrar gastos desde terreno en tiempo real    |
 
-### Configuración Mínima
-
-**Precio:** $1.000.000  
-Solo lo incluido en precio base. Ideal para empezar y ver resultados.
-
-### Configuración Recomendada ⭐
-
-**Precio:** $1.600.000 ($1M base + $600K extras)  
-Base + Gestión de multas + Control de choferes + Dashboard con gráficos
-
-### Configuración Completa
-
-**Precio:** $2.400.000 ($1M base + $1.4M extras)  
-Todo lo anterior + Reportes avanzados + Usuarios ilimitados + App móvil
+**💡 Recomendación:** La mayoría de empresas comienzan con el paquete base y agregan funcionalidades después según van descubriendo qué necesitan.
 
 ---
 
@@ -98,7 +82,7 @@ Todo lo anterior + Reportes avanzados + Usuarios ilimitados + App móvil
 **Incluye:**
 
 - Migración completa de sus datos Excel
-- Capacitación presencial u online
+- Capacitación online
 - Soporte técnico durante 3 meses
 - Respaldo diario de información
 - Hosting seguro por 1 año
@@ -111,7 +95,7 @@ Todo lo anterior + Reportes avanzados + Usuarios ilimitados + App móvil
 
 Si le interesa, agendamos una reunión (1 hora) para:
 
-1. Revisar sus Excel actuales
+1. Revisar un prototipo inicial
 2. Definir exactamente qué funcionalidades necesitan
 3. Ajustar el precio final
 
@@ -119,7 +103,7 @@ Si le interesa, agendamos una reunión (1 hora) para:
 
 **Contacto:**  
 Sebastián Castillo  
-📧 sebastian@tuempresa.cl  
+📧 contacto@talonarios.cl  
 📱 +56 9 XXXX XXXX
 
 **Validez:** 30 días | **Precios:** IVA incluido
