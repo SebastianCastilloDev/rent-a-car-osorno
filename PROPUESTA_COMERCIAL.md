@@ -58,14 +58,14 @@ Sistema web que centraliza toda la información en un solo lugar:
 
 ¿Necesitan algo más específico? Pueden agregar:
 
-| Funcionalidad              | Costo     | Cuándo conviene                                                                                     |
-| -------------------------- | --------- | --------------------------------------------------------------------------------------------------- |
-| **Gestión de Multas**      | +$150.000 | Si tienen infracciones frecuentes y necesitan control de pagos                                      |
-| **Control de Choferes**    | +$100.000 | Si rotan choferes y necesitan historial por persona                                                 |
-| **Dashboard con Gráficos** | +$200.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales                                 |
-| **Reportes Avanzados**     | +$150.000 | Si el contador necesita exportar datos a Excel con filtros específicos                              |
-| **Usuarios Ilimitados**    | +$50.000  | Solo si necesitan más de 5 personas usando el sistema                                               |
-| **App Móvil**              | +$350.000 | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real |
+| Funcionalidad              | Costo     | Cuándo conviene                                                                                      |
+| -------------------------- | --------- | ---------------------------------------------------------------------------------------------------- |
+| **Sistema de Alarmas**     | +$150.000 | Notificaciones automáticas por correo o sistema cuando se acercan vencimientos o eventos importantes |
+| **Control de Choferes**    | +$100.000 | Si rotan choferes y necesitan historial por persona                                                  |
+| **Dashboard con Gráficos** | +$200.000 | Para ver tendencias de gastos y tomar decisiones con datos visuales                                  |
+| **Reportes Avanzados**     | +$150.000 | Si el contador necesita exportar datos a Excel con filtros específicos                               |
+| **Usuarios Ilimitados**    | +$50.000  | Solo si necesitan más de 5 personas usando el sistema                                                |
+| **App Móvil**              | +$350.000 | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real  |
 
 ---
 
