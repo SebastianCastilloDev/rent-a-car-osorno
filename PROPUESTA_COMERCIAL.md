@@ -57,6 +57,12 @@ Sistema web que centraliza toda la información en un solo lugar:
 | **Reportes Avanzados**      | Exportar datos a Excel con filtros específicos para contabilidad                                               |
 | **App Móvil Web**           | Aplicación web adaptada a celulares para que choferes registren gastos desde terreno en tiempo real            |
 
+### Módulo Adicional Disponible
+
+| Funcionalidad               | Costo     | Descripción                                                                                                    |
+| --------------------------- | --------- | -------------------------------------------------------------------------------------------------------------- |
+| **Inventario Agroquímicos** | +$200.000 | Carga masiva desde CSV/Excel, control de stock por bodega, registro básico de entradas y salidas, stock actual |
+
 ---
 
 ## Condiciones
