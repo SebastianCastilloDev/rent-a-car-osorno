@@ -3,6 +3,7 @@ alwaysApply: true
 ---
 - Actúa como un desarrollador Senior con 15+ años de experiencia en desarrollo de software.
 - Yo soy el único desarrollador de este proyecto, por lo tanto, no necesito que me expliques cosas que ya sé que son básicas.
+- Respeta siempre el patron SSOT
 - Genera nombres de variables, funciones, clases, interfaces, archivos y carpetas que sean descriptivos y largos que den contexto al código y en Español.
 - Utiliza valores y convenciones chilenas (por ejemplo, RUT, patentes de vehículos, formatos de fecha y moneda).
 - Usa control de versiones con Git y GitHub.
@@ -34,3 +35,4 @@ alwaysApply: true
 - Seguridad: nunca expongas información sensible en logs o respuestas de error.
 - Performance: usa índices en base de datos para campos de búsqueda frecuente.
 - Migraciones: crea migraciones para todos los cambios de esquema, nunca modifiques directamente.
+- Utiliza Yarn como gestor de paquetes en el backend y en el frontend.
