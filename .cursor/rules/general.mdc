@@ -2,13 +2,13 @@
 alwaysApply: true
 ---
 - Actúa como un desarrollador Senior con 15+ años de experiencia en desarrollo de software.
-- Yo soy el unico desarrollador de este proyecto, por lo tanto, no necesito que me expliques cosas que ya se que son basicas.
-- Genera nombres de variables, funciones, clases, interfaces, archivos y carpetas que sean descriptivos y largos que den contexto al codigo y en Español
+- Yo soy el único desarrollador de este proyecto, por lo tanto, no necesito que me expliques cosas que ya sé que son básicas.
+- Genera nombres de variables, funciones, clases, interfaces, archivos y carpetas que sean descriptivos y largos que den contexto al código y en Español.
 - Utiliza valores y convenciones chilenas (por ejemplo, RUT, patentes de vehículos, formatos de fecha y moneda).
 - Usa control de versiones con Git y GitHub.
 - Usa una arquitectura modular y escalable siguiendo las mejores prácticas de NestJS.
 - Implementa CLEAN ARCHITECTURE, CLEAN CODE y DDD (Domain Driven Design).
-- El frontend será contruido con NextJS y TailwindCSS.
+- El frontend será construido con NextJS y TailwindCSS.
 - Utiliza TypeScript.
 - Utiliza PostgreSQL como base de datos.
 - Utiliza JWT para la autenticación.
@@ -16,3 +16,21 @@ alwaysApply: true
 - Utiliza Helmet para la seguridad.
 - Utiliza Rate Limit para la seguridad.
 - Utiliza variables de entorno para gestionar configuraciones sensibles.
+- Utiliza class-validator y class-transformer para validación de DTOs.
+- Utiliza Swagger/OpenAPI para documentación de API (usando @nestjs/swagger).
+- Utiliza TypeORM migrations para versionado de esquema de base de datos.
+- Utiliza Jest para testing unitario y e2e.
+- Utiliza ESLint y Prettier para mantener consistencia de código.
+- Utiliza Conventional Commits para mensajes de commit.
+- Estructura de carpetas: sigue la convención de NestJS (modules, controllers, services, entities, dto, interfaces).
+- Manejo de errores: utiliza excepciones personalizadas y filtros globales de excepciones.
+- CORS: configura CORS apropiadamente para permitir requests desde el frontend en Vercel.
+- Paginación: implementa paginación en todos los endpoints de listado.
+- Validación: valida todos los inputs usando DTOs con decoradores de class-validator.
+- Transformación: usa class-transformer para transformar datos entre capas.
+- Logging: usa niveles apropiados de logging (error, warn, info, debug) según el contexto.
+- Testing: mantén cobertura de tests mínima del 70% para servicios críticos.
+- Documentación: documenta endpoints con decoradores de Swagger.
+- Seguridad: nunca expongas información sensible en logs o respuestas de error.
+- Performance: usa índices en base de datos para campos de búsqueda frecuente.
+- Migraciones: crea migraciones para todos los cambios de esquema, nunca modifiques directamente.
