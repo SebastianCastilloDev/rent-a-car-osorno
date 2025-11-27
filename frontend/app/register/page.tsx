@@ -67,79 +67,145 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-6 text-center">Registrarse</h1>
+    <div className="flex items-center justify-center min-h-screen bg-white py-8">
+      <div className="w-full max-w-2xl">
+        <div className="mb-8">
+          <h1 className="text-3xl font-semibold text-gray-900 mb-2">
+            Crear Cuenta
+          </h1>
+        </div>
 
         {error && (
-          <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 rounded-md text-sm">
             {error}
           </div>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            label="RUT"
-            {...register('rut')}
-            error={errors.rut?.message}
-            placeholder="123456789"
-          />
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <div className="grid grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="rut" className="block text-sm font-medium text-gray-700 mb-2">
+                RUT
+              </label>
+              <input
+                id="rut"
+                {...register('rut')}
+                placeholder="123456789"
+                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              {errors.rut && (
+                <p className="mt-1.5 text-sm text-red-600">{errors.rut.message}</p>
+              )}
+            </div>
 
-          <Input
-            label="Nombre"
-            {...register('nombre')}
-            error={errors.nombre?.message}
-          />
+            <div>
+              <label htmlFor="rol" className="block text-sm font-medium text-gray-700 mb-2">
+                Rol
+              </label>
+              <select
+                id="rol"
+                {...register('rol')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              >
+                <option value="usuario">Usuario</option>
+                <option value="admin">Administrador</option>
+              </select>
+              {errors.rol && (
+                <p className="mt-1.5 text-sm text-red-600">{errors.rol.message}</p>
+              )}
+            </div>
+          </div>
 
-          <Input
-            label="Apellido"
-            {...register('apellido')}
-            error={errors.apellido?.message}
-          />
+          <div className="grid grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="nombre" className="block text-sm font-medium text-gray-700 mb-2">
+                Nombre
+              </label>
+              <input
+                id="nombre"
+                {...register('nombre')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              {errors.nombre && (
+                <p className="mt-1.5 text-sm text-red-600">{errors.nombre.message}</p>
+              )}
+            </div>
 
-          <Input
-            label="Email"
-            type="email"
-            {...register('email')}
-            error={errors.email?.message}
-          />
+            <div>
+              <label htmlFor="apellido" className="block text-sm font-medium text-gray-700 mb-2">
+                Apellido
+              </label>
+              <input
+                id="apellido"
+                {...register('apellido')}
+                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              />
+              {errors.apellido && (
+                <p className="mt-1.5 text-sm text-red-600">{errors.apellido.message}</p>
+              )}
+            </div>
+          </div>
 
-          <Input
-            label="Contraseña"
-            type="password"
-            {...register('password')}
-            error={errors.password?.message}
-          />
-
-          <Input
-            label="Confirmar Contraseña"
-            type="password"
-            {...register('confirmPassword')}
-            error={errors.confirmPassword?.message}
-          />
-
-          <div className="mb-4">
-            <label className="block text-sm font-medium mb-1">Rol</label>
-            <select
-              {...register('rol')}
-              className="w-full px-3 py-2 border border-gray-300 rounded"
-            >
-              <option value="usuario">Usuario</option>
-              <option value="admin">Administrador</option>
-            </select>
-            {errors.rol && (
-              <p className="text-red-500 text-sm mt-1">{errors.rol.message}</p>
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+              Email
+            </label>
+            <input
+              id="email"
+              type="email"
+              {...register('email')}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="tu@email.com"
+            />
+            {errors.email && (
+              <p className="mt-1.5 text-sm text-red-600">{errors.email.message}</p>
             )}
           </div>
 
-          <Button type="submit" className="w-full" disabled={isLoading}>
-            {isLoading ? 'Registrando...' : 'Registrarse'}
-          </Button>
+          <div>
+            <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-2">
+              Contraseña
+            </label>
+            <input
+              id="password"
+              type="password"
+              {...register('password')}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="••••••••"
+            />
+            {errors.password && (
+              <p className="mt-1.5 text-sm text-red-600">{errors.password.message}</p>
+            )}
+          </div>
+
+          <div>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+              Confirmar Contraseña
+            </label>
+            <input
+              id="confirmPassword"
+              type="password"
+              {...register('confirmPassword')}
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+              placeholder="••••••••"
+            />
+            {errors.confirmPassword && (
+              <p className="mt-1.5 text-sm text-red-600">{errors.confirmPassword.message}</p>
+            )}
+          </div>
+
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium text-base hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
+          >
+            {isLoading ? 'Registrando...' : 'Crear Cuenta'}
+          </button>
         </form>
 
-        <div className="mt-4 text-center">
-          <Link href="/login" className="text-blue-600 hover:underline">
-            ¿Ya tienes cuenta? Inicia sesión
+        <div className="mt-6 text-center">
+          <Link href="/login" className="text-sm text-blue-600 hover:text-blue-700 font-medium">
+            Iniciar sesión
           </Link>
         </div>
       </div>
