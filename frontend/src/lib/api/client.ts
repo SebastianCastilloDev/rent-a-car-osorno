@@ -37,12 +37,12 @@ class ApiClient {
     // Response interceptor: manejar errores
     this.client.interceptors.response.use(
       (response) => response,
-      (error: AxiosError) => {
+      (error: AxiosError<{ message?: string; error?: string }>) => {
         if (error.response) {
           const apiError: ApiError = {
-            message: (error.response.data as any)?.message || 'Error en la petición',
+            message: error.response.data?.message || 'Error en la petición',
             statusCode: error.response.status,
-            error: (error.response.data as any)?.error,
+            error: error.response.data?.error,
           };
 
           // Si es 401, limpiar token y redirigir a login

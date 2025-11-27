@@ -1,3 +1,5 @@
+import { Vehiculo } from './vehiculo.types';
+
 export interface Chofer {
   rut: string;
   nombre: string;
@@ -5,7 +7,7 @@ export interface Chofer {
   telefono?: string;
   fechaCreacion: string;
   fechaActualizacion: string;
-  vehiculos?: any[];
+  vehiculos?: Vehiculo[];
 }
 
 export interface CreateChoferInput {

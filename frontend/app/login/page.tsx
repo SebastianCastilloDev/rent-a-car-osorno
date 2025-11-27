@@ -9,6 +9,7 @@ import { authApi } from '@/src/lib/api/resources/auth.api';
 import { useAuthStore } from '@/src/store/auth-store';
 import { Input } from '@/src/components/ui/Input';
 import { Button } from '@/src/components/ui/Button';
+import { ApiError } from '@/src/types/api.types';
 
 const loginSchema = z.object({
   email: z.string().email('Email inválido'),
@@ -39,8 +40,9 @@ export default function LoginPage() {
       const response = await authApi.login(data);
       login(response);
       router.push('/dashboard');
-    } catch (err: any) {
-      setError(err.message || 'Error al iniciar sesión');
+    } catch (err) {
+      const error = err as ApiError;
+      setError(error.message || 'Error al iniciar sesión');
     } finally {
       setIsLoading(false);
     }
