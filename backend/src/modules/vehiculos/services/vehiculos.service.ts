@@ -14,7 +14,7 @@ export class VehiculosService {
   constructor(
     @InjectRepository(Vehiculo)
     private readonly vehiculoRepository: Repository<Vehiculo>,
-  ) {}
+  ) { }
 
   async crear(createVehiculoDto: CreateVehiculoDto): Promise<Vehiculo> {
     const patenteLimpia = limpiarPatente(createVehiculoDto.patente);

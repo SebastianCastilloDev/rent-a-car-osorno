@@ -26,7 +26,7 @@ import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('multas')
 export class MultasController {
-  constructor(private readonly multasService: MultasService) {}
+  constructor(private readonly multasService: MultasService) { }
 
   @Post()
   @ApiOperation({ summary: 'Registrar una nueva multa' })

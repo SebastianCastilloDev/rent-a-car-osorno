@@ -10,4 +10,4 @@ import { GastosService } from './services/gastos.service';
   providers: [GastosService],
   exports: [GastosService, TypeOrmModule],
 })
-export class GastosModule {}
+export class GastosModule { }

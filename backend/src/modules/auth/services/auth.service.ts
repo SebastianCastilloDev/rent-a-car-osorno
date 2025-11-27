@@ -8,10 +8,10 @@ import { LoginDto } from '../dto/login.dto';
 @Injectable()
 export class AuthService {
   constructor(
-    private usuariosService: UsuariosService,
-    private jwtService: JwtService,
-    private configService: ConfigService,
-  ) {}
+    private readonly usuariosService: UsuariosService,
+    private readonly jwtService: JwtService,
+    private readonly configService: ConfigService,
+  ) { }
 
   async login(loginDto: LoginDto) {
     const usuario = await this.usuariosService.encontrarPorEmail(

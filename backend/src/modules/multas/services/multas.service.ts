@@ -10,7 +10,7 @@ export class MultasService {
   constructor(
     @InjectRepository(Multa)
     private readonly multaRepository: Repository<Multa>,
-  ) {}
+  ) { }
 
   async crear(createMultaDto: CreateMultaDto): Promise<Multa> {
     const multa = this.multaRepository.create(createMultaDto);

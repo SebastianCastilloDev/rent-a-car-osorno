@@ -26,7 +26,7 @@ import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('gastos')
 export class GastosController {
-  constructor(private readonly gastosService: GastosService) {}
+  constructor(private readonly gastosService: GastosService) { }
 
   @Post()
   @ApiOperation({ summary: 'Registrar un nuevo gasto' })

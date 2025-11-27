@@ -24,7 +24,7 @@ import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('vehiculos')
 export class VehiculosController {
-  constructor(private readonly vehiculosService: VehiculosService) {}
+  constructor(private readonly vehiculosService: VehiculosService) { }
 
   @Post()
   @ApiOperation({ summary: 'Crear un nuevo vehículo' })

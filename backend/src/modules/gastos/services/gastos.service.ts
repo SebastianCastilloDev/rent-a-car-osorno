@@ -10,7 +10,7 @@ export class GastosService {
   constructor(
     @InjectRepository(Gasto)
     private readonly gastoRepository: Repository<Gasto>,
-  ) {}
+  ) { }
 
   async crear(createGastoDto: CreateGastoDto): Promise<Gasto> {
     const gasto = this.gastoRepository.create(createGastoDto);

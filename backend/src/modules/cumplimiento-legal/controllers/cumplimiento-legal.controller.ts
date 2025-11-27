@@ -28,7 +28,7 @@ import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 export class CumplimientoLegalController {
   constructor(
     private readonly cumplimientoLegalService: CumplimientoLegalService,
-  ) {}
+  ) { }
 
   // Revisiones Técnicas
   @Post('revisiones-tecnicas')

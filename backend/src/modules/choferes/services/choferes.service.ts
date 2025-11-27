@@ -11,7 +11,7 @@ export class ChoferesService {
   constructor(
     @InjectRepository(Chofer)
     private readonly choferRepository: Repository<Chofer>,
-  ) {}
+  ) { }
 
   async crear(createChoferDto: CreateChoferDto): Promise<Chofer> {
     const rutLimpio = limpiarRUT(createChoferDto.rut);

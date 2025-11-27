@@ -24,7 +24,7 @@ import { JwtAuthGuard } from '../../auth/guards/jwt-auth.guard';
 @UseGuards(JwtAuthGuard)
 @Controller('choferes')
 export class ChoferesController {
-  constructor(private readonly choferesService: ChoferesService) {}
+  constructor(private readonly choferesService: ChoferesService) { }
 
   @Post()
   @ApiOperation({ summary: 'Crear un nuevo chofer' })

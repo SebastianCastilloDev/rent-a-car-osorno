@@ -10,4 +10,4 @@ import { UsuariosService } from './services/usuarios.service';
   providers: [UsuariosService],
   exports: [UsuariosService, TypeOrmModule],
 })
-export class UsuariosModule {}
+export class UsuariosModule { }

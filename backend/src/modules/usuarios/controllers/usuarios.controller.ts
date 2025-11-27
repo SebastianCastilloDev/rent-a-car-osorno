@@ -22,7 +22,7 @@ import { UpdateUsuarioDto } from '../dto/update-usuario.dto';
 @ApiBearerAuth('JWT-auth')
 @Controller('usuarios')
 export class UsuariosController {
-  constructor(private readonly usuariosService: UsuariosService) {}
+  constructor(private readonly usuariosService: UsuariosService) { }
 
   @Post()
   @ApiOperation({ summary: 'Crear un nuevo usuario' })

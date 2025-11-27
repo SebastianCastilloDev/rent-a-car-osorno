@@ -15,7 +15,7 @@ export class CumplimientoLegalService {
     private readonly revisionTecnicaRepository: Repository<RevisionTecnica>,
     @InjectRepository(PermisoCirculacion)
     private readonly permisoCirculacionRepository: Repository<PermisoCirculacion>,
-  ) {}
+  ) { }
 
   // Revisiones Técnicas
   async crearRevisionTecnica(
