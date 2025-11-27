@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
+import Link from 'next/link';
 import { authApi } from '@/src/lib/api/resources/auth.api';
 import { useAuthStore } from '@/src/store/auth-store';
 import { Input } from '@/src/components/ui/Input';
@@ -78,6 +79,12 @@ export default function LoginPage() {
             {isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
           </Button>
         </form>
+
+        <div className="mt-4 text-center">
+          <Link href="/register" className="text-blue-600 hover:underline">
+            ¿No tienes cuenta? Regístrate
+          </Link>
+        </div>
       </div>
     </div>
   );

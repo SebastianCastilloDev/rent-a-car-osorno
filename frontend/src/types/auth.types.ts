@@ -3,9 +3,18 @@ export interface LoginInput {
   password: string;
 }
 
+export interface RegisterInput {
+  rut: string;
+  nombre: string;
+  apellido: string;
+  email: string;
+  password: string;
+  rol: 'admin' | 'usuario';
+}
+
 export interface LoginResponse {
   access_token: string;
-  user: {
+  usuario: {
     email: string;
     rut: string;
     nombre: string;
@@ -13,3 +22,5 @@ export interface LoginResponse {
     rol: string;
   };
 }
+
+export type RegisterResponse = LoginResponse;

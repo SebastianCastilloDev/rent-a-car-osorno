@@ -5,7 +5,7 @@ import { LoginResponse } from '@/src/types/auth.types';
 
 interface AuthState {
     token: string | null;
-    user: LoginResponse['user'] | null;
+    user: LoginResponse['usuario'] | null;
     isAuthenticated: boolean;
     login: (response: LoginResponse) => void;
     logout: () => void;
@@ -35,11 +35,11 @@ export const useAuthStore = create<AuthState>((set) => {
         login: (response: LoginResponse) => {
             if (globalThis.window !== undefined) {
                 globalThis.window.localStorage.setItem('auth_token', response.access_token);
-                globalThis.window.localStorage.setItem('auth_user', JSON.stringify(response.user));
+                globalThis.window.localStorage.setItem('auth_user', JSON.stringify(response.usuario));
             }
             set({
                 token: response.access_token,
-                user: response.user,
+                user: response.usuario,
                 isAuthenticated: true,
             });
         },
