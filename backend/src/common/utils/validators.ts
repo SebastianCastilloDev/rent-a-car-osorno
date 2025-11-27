@@ -74,5 +74,3 @@ export function limpiarPatente(patente: string): string {
   if (!patente) return '';
   return patente.replace(/-/g, '').toUpperCase();
 }
-
-

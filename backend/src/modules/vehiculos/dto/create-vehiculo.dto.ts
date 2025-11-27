@@ -19,11 +19,15 @@ export class CreateVehiculoDto {
   @IsString()
   @IsNotEmpty()
   @Matches(/^[A-Z]{4}\d{2}$|^[A-Z]{2}\d{4}$/, {
-    message: 'La patente debe tener formato chileno válido (ej: AABB12 o AA1234)',
+    message:
+      'La patente debe tener formato chileno válido (ej: AABB12 o AA1234)',
   })
   patente: string;
 
-  @ApiProperty({ description: 'Dígito verificador de la patente', example: '1' })
+  @ApiProperty({
+    description: 'Dígito verificador de la patente',
+    example: '1',
+  })
   @IsString()
   @IsNotEmpty()
   @MaxLength(1)
@@ -109,7 +113,10 @@ export class CreateVehiculoDto {
   @MaxLength(30)
   color?: string;
 
-  @ApiPropertyOptional({ description: 'Tipo de transmisión', example: 'Manual' })
+  @ApiPropertyOptional({
+    description: 'Tipo de transmisión',
+    example: 'Manual',
+  })
   @IsOptional()
   @IsString()
   @MaxLength(20)
@@ -141,4 +148,3 @@ export class CreateVehiculoDto {
   @IsString()
   choferRut?: string;
 }
-

@@ -40,5 +40,3 @@ export class Usuario {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-
-

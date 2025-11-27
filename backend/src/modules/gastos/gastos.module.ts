@@ -11,4 +11,3 @@ import { GastosService } from './services/gastos.service';
   exports: [GastosService, TypeOrmModule],
 })
 export class GastosModule {}
-

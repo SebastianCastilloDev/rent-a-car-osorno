@@ -50,4 +50,3 @@ export class Multa {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

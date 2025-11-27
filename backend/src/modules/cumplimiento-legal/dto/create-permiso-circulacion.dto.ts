@@ -52,4 +52,3 @@ export class CreatePermisoCirculacionDto {
   @Type(() => Date)
   fechaPago?: Date;
 }
-

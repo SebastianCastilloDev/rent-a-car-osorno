@@ -11,4 +11,3 @@ import { ChoferesService } from './services/choferes.service';
   exports: [ChoferesService, TypeOrmModule],
 })
 export class ChoferesModule {}
-

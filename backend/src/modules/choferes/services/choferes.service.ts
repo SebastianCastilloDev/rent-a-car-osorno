@@ -65,4 +65,3 @@ export class ChoferesService {
     await this.choferRepository.save(chofer);
   }
 }
-

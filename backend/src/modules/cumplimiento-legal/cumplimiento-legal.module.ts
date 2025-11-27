@@ -12,4 +12,3 @@ import { CumplimientoLegalService } from './services/cumplimiento-legal.service'
   exports: [CumplimientoLegalService, TypeOrmModule],
 })
 export class CumplimientoLegalModule {}
-

@@ -34,4 +34,3 @@ export class Chofer {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

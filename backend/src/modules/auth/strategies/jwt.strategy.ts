@@ -19,7 +19,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
 
   async validate(payload: any) {
     const usuario = await this.usuariosService.encontrarPorRUT(payload.sub);
-    
+
     if (!usuario || !usuario.activo) {
       throw new UnauthorizedException('Usuario no autorizado');
     }
@@ -31,5 +31,3 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     };
   }
 }
-
-

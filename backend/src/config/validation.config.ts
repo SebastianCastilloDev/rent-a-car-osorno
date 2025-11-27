@@ -9,5 +9,3 @@ export const configuracionValidacionGlobal = new ValidationPipe({
   },
   disableErrorMessages: process.env.NODE_ENV === 'production',
 });
-
-

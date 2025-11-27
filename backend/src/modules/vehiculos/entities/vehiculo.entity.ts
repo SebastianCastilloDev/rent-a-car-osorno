@@ -25,7 +25,12 @@ export class Vehiculo {
   @Column({ type: 'varchar', length: 100, nullable: true })
   proveedor: string;
 
-  @Column({ type: 'varchar', length: 50, nullable: true, name: 'numero_factura' })
+  @Column({
+    type: 'varchar',
+    length: 50,
+    nullable: true,
+    name: 'numero_factura',
+  })
   numeroFactura: string;
 
   @Column({ type: 'date', nullable: true, name: 'fecha_compra' })
@@ -61,7 +66,12 @@ export class Vehiculo {
   @Column({ type: 'varchar', length: 20, nullable: true })
   combustible: string;
 
-  @Column({ type: 'varchar', length: 100, nullable: true, name: 'ubicacion_actual' })
+  @Column({
+    type: 'varchar',
+    length: 100,
+    nullable: true,
+    name: 'ubicacion_actual',
+  })
   ubicacionActual: string;
 
   @Column({ type: 'varchar', length: 12, nullable: true, name: 'chofer_rut' })
@@ -89,4 +99,3 @@ export class Vehiculo {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

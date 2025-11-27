@@ -26,5 +26,3 @@ export enum CategoriaGasto {
 
 // Días de alerta para vencimientos
 export const DIAS_ALERTA_VENCIMIENTO = [30, 15, 7];
-
-

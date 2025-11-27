@@ -5,17 +5,17 @@
  */
 export function formatearRUT(rut: string): string {
   if (!rut) return '';
-  
+
   // Remover puntos y guiones existentes
   const rutLimpio = rut.replace(/\./g, '').replace(/-/g, '');
-  
+
   // Separar número y dígito verificador
   const dv = rutLimpio.slice(-1).toUpperCase();
   const numero = rutLimpio.slice(0, -1);
-  
+
   // Formatear número con puntos
   const numeroFormateado = numero.replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-  
+
   return `${numeroFormateado}-${dv}`;
 }
 
@@ -26,15 +26,15 @@ export function formatearRUT(rut: string): string {
  */
 export function formatearPatente(patente: string): string {
   if (!patente) return '';
-  
+
   // Remover guiones existentes y convertir a mayúsculas
   const patenteLimpia = patente.replace(/-/g, '').toUpperCase();
-  
+
   // Formato: AA-BB-12 o AA-BB-CD
   if (patenteLimpia.length === 6) {
     return `${patenteLimpia.slice(0, 2)}-${patenteLimpia.slice(2, 4)}-${patenteLimpia.slice(4, 6)}`;
   }
-  
+
   return patenteLimpia;
 }
 
@@ -63,5 +63,3 @@ export function formatearFecha(fecha: Date): string {
     year: 'numeric',
   }).format(fecha);
 }
-
-

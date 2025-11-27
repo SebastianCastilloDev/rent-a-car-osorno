@@ -56,4 +56,3 @@ export class MultasService {
     await this.multaRepository.remove(multa);
   }
 }
-

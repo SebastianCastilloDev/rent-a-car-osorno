@@ -46,4 +46,3 @@ export class Gasto {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

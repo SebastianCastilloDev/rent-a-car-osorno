@@ -43,4 +43,3 @@ export class RevisionTecnica {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

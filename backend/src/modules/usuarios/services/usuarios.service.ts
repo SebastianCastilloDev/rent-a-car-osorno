@@ -15,7 +15,7 @@ export class UsuariosService {
 
   async crear(createUsuarioDto: CreateUsuarioDto): Promise<Usuario> {
     const hashedPassword = await bcrypt.hash(createUsuarioDto.password, 10);
-    
+
     const usuario = this.usuarioRepository.create({
       ...createUsuarioDto,
       password: hashedPassword,
@@ -26,7 +26,15 @@ export class UsuariosService {
 
   async encontrarTodos(): Promise<Usuario[]> {
     return await this.usuarioRepository.find({
-      select: ['rut', 'nombre', 'apellido', 'email', 'rol', 'activo', 'fechaCreacion'],
+      select: [
+        'rut',
+        'nombre',
+        'apellido',
+        'email',
+        'rol',
+        'activo',
+        'fechaCreacion',
+      ],
     });
   }
 
@@ -71,5 +79,3 @@ export class UsuariosService {
     await this.usuarioRepository.remove(usuario);
   }
 }
-
-

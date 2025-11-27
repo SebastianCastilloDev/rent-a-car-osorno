@@ -11,4 +11,3 @@ import { VehiculosService } from './services/vehiculos.service';
   exports: [VehiculosService, TypeOrmModule],
 })
 export class VehiculosModule {}
-

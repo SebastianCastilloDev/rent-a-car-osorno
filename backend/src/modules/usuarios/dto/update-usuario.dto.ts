@@ -13,5 +13,3 @@ export class UpdateUsuarioDto extends PartialType(CreateUsuarioDto) {
   @MinLength(8)
   password?: string;
 }
-
-

@@ -56,4 +56,3 @@ export class GastosService {
     await this.gastoRepository.remove(gasto);
   }
 }
-

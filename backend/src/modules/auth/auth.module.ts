@@ -30,4 +30,3 @@ import { UsuariosModule } from '../usuarios/usuarios.module';
   exports: [AuthService],
 })
 export class AuthModule {}
-

@@ -66,5 +66,3 @@ export class UsuariosController {
     return this.usuariosService.eliminar(rut);
   }
 }
-
-

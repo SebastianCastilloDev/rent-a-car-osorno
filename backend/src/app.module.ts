@@ -38,8 +38,8 @@ import { MultasModule } from './modules/multas/multas.module';
     // Rate Limiting
     ThrottlerModule.forRoot([
       {
-        ttl: parseInt(process.env.THROTTLE_TTL, 10) || 60000,
-        limit: parseInt(process.env.THROTTLE_LIMIT, 10) || 10,
+        ttl: Number.parseInt(process.env.THROTTLE_TTL, 10) || 60000,
+        limit: Number.parseInt(process.env.THROTTLE_LIMIT, 10) || 10,
       },
     ]),
 
@@ -68,4 +68,4 @@ import { MultasModule } from './modules/multas/multas.module';
     },
   ],
 })
-export class AppModule {}
+export class AppModule { }

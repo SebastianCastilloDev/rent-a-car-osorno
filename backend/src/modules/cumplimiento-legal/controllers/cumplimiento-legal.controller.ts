@@ -93,7 +93,10 @@ export class CumplimientoLegalController {
 
   @Get('permisos-circulacion/:id')
   @ApiOperation({ summary: 'Obtener un permiso de circulación por ID' })
-  @ApiResponse({ status: 200, description: 'Permiso de circulación encontrado' })
+  @ApiResponse({
+    status: 200,
+    description: 'Permiso de circulación encontrado',
+  })
   @ApiResponse({
     status: 404,
     description: 'Permiso de circulación no encontrado',
@@ -104,7 +107,10 @@ export class CumplimientoLegalController {
 
   @Patch('permisos-circulacion/:id')
   @ApiOperation({ summary: 'Actualizar un permiso de circulación' })
-  @ApiResponse({ status: 200, description: 'Permiso de circulación actualizado' })
+  @ApiResponse({
+    status: 200,
+    description: 'Permiso de circulación actualizado',
+  })
   actualizarPermisoCirculacion(
     @Param('id') id: string,
     @Body() dto: UpdatePermisoCirculacionDto,
@@ -119,4 +125,3 @@ export class CumplimientoLegalController {
     return this.cumplimientoLegalService.eliminarPermisoCirculacion(+id);
   }
 }
-

@@ -11,4 +11,3 @@ import { MultasService } from './services/multas.service';
   exports: [MultasService, TypeOrmModule],
 })
 export class MultasModule {}
-

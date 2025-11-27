@@ -68,4 +68,3 @@ export class VehiculosController {
     return this.vehiculosService.eliminar(patente);
   }
 }
-

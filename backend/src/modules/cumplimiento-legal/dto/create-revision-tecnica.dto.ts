@@ -1,4 +1,10 @@
-import { IsString, IsNotEmpty, IsEnum, IsOptional, IsDate } from 'class-validator';
+import {
+  IsString,
+  IsNotEmpty,
+  IsEnum,
+  IsOptional,
+  IsDate,
+} from 'class-validator';
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { Type } from 'class-transformer';
 import { EstadoRevisionTecnica } from '../../../common/constants';
@@ -36,4 +42,3 @@ export class CreateRevisionTecnicaDto {
   @IsString()
   observaciones?: string;
 }
-

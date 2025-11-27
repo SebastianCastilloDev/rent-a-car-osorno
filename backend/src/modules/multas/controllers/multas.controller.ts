@@ -38,7 +38,11 @@ export class MultasController {
 
   @Get()
   @ApiOperation({ summary: 'Obtener todas las multas' })
-  @ApiQuery({ name: 'patente', required: false, description: 'Filtrar por patente de vehículo' })
+  @ApiQuery({
+    name: 'patente',
+    required: false,
+    description: 'Filtrar por patente de vehículo',
+  })
   @ApiResponse({ status: 200, description: 'Lista de multas' })
   encontrarTodas(@Query('patente') patente?: string) {
     if (patente) {
@@ -71,4 +75,3 @@ export class MultasController {
     return this.multasService.eliminar(+id);
   }
 }
-

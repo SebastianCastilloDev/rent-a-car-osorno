@@ -53,7 +53,9 @@ export class VehiculosService {
     });
 
     if (!vehiculo) {
-      throw new NotFoundException(`Vehículo con patente ${patente} no encontrado`);
+      throw new NotFoundException(
+        `Vehículo con patente ${patente} no encontrado`,
+      );
     }
 
     return vehiculo;
@@ -74,4 +76,3 @@ export class VehiculosService {
     await this.vehiculoRepository.remove(vehiculo);
   }
 }
-

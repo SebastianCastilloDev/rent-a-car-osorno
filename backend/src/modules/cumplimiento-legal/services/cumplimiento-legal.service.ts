@@ -39,7 +39,9 @@ export class CumplimientoLegalService {
     });
 
     if (!revision) {
-      throw new NotFoundException(`Revisión técnica con ID ${id} no encontrada`);
+      throw new NotFoundException(
+        `Revisión técnica con ID ${id} no encontrada`,
+      );
     }
 
     return revision;
@@ -105,4 +107,3 @@ export class CumplimientoLegalService {
     await this.permisoCirculacionRepository.remove(permiso);
   }
 }
-

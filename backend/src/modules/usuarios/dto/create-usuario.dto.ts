@@ -56,5 +56,3 @@ export class CreateUsuarioDto {
   @IsEnum(RolUsuario)
   rol: RolUsuario;
 }
-
-

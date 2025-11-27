@@ -52,4 +52,3 @@ export class CreateGastoDto {
   @IsString()
   descripcion?: string;
 }
-

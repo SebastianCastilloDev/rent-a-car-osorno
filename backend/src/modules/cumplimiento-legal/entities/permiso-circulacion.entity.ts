@@ -41,4 +41,3 @@ export class PermisoCirculacion {
   @UpdateDateColumn({ name: 'fecha_actualizacion' })
   fechaActualizacion: Date;
 }
-

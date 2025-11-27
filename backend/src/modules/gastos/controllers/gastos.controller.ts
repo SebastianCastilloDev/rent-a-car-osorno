@@ -38,7 +38,11 @@ export class GastosController {
 
   @Get()
   @ApiOperation({ summary: 'Obtener todos los gastos' })
-  @ApiQuery({ name: 'patente', required: false, description: 'Filtrar por patente de vehículo' })
+  @ApiQuery({
+    name: 'patente',
+    required: false,
+    description: 'Filtrar por patente de vehículo',
+  })
   @ApiResponse({ status: 200, description: 'Lista de gastos' })
   encontrarTodos(@Query('patente') patente?: string) {
     if (patente) {
@@ -71,4 +75,3 @@ export class GastosController {
     return this.gastosService.eliminar(+id);
   }
 }
-
