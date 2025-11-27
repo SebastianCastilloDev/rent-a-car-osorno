@@ -57,9 +57,20 @@ export const VehiculoForm: React.FC<VehiculoFormProps> = ({ vehiculo, onSuccess 
 
   const mutation = useMutation({
     mutationFn: (data: CreateVehiculoInput) => {
-      const cleanData = {
+      const cleanData: CreateVehiculoInput = {
         ...data,
         patente: limpiarPatente(data.patente),
+        // Convertir strings vacíos a undefined para campos opcionales
+        choferRut: data.choferRut?.trim() || undefined,
+        color: data.color?.trim() || undefined,
+        combustible: data.combustible?.trim() || undefined,
+        ubicacionActual: data.ubicacionActual?.trim() || undefined,
+        proveedor: data.proveedor?.trim() || undefined,
+        numeroFactura: data.numeroFactura?.trim() || undefined,
+        condicion: data.condicion?.trim() || undefined,
+        motor: data.motor?.trim() || undefined,
+        chassis: data.chassis?.trim() || undefined,
+        transmision: data.transmision?.trim() || undefined,
       };
       return isEdit
         ? vehiculosApi.update(vehiculo.patente, cleanData)

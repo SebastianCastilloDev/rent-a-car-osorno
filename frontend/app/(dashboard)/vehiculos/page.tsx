@@ -9,6 +9,7 @@ import { Button } from '@/src/components/ui/Button';
 import { Modal } from '@/src/components/ui/Modal';
 import { VehiculoForm } from '@/src/components/forms/VehiculoForm';
 import { formatearPatente } from '@/src/lib/utils/formatters';
+import Link from 'next/link';
 
 export default function VehiculosPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -59,7 +60,14 @@ export default function VehiculosPage() {
       >
         {vehiculos.map((vehiculo) => (
           <TableRow key={vehiculo.patente}>
-            <TableCell>{formatearPatente(vehiculo.patente)}</TableCell>
+            <TableCell>
+              <Link 
+                href={`/vehiculos/${vehiculo.patente}`}
+                className="text-blue-600 hover:text-blue-700 font-medium"
+              >
+                {formatearPatente(vehiculo.patente)}
+              </Link>
+            </TableCell>
             <TableCell>{vehiculo.marca}</TableCell>
             <TableCell>{vehiculo.modelo}</TableCell>
             <TableCell>{vehiculo.anio}</TableCell>

@@ -25,11 +25,13 @@ type PermisoFormData = z.infer<typeof permisoSchema>;
 
 interface PermisoCirculacionFormProps {
   permiso?: PermisoCirculacion | null;
+  vehiculoPatente?: string;
   onSuccess: () => void;
 }
 
 export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
   permiso,
+  vehiculoPatente,
   onSuccess,
 }) => {
   const queryClient = useQueryClient();
@@ -51,7 +53,14 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
           ...permiso,
           fechaPago: permiso.fechaPago?.split('T')[0],
         }
-      : undefined,
+      : vehiculoPatente
+        ? {
+            vehiculoPatente,
+            anio: new Date().getFullYear(),
+          }
+        : {
+            anio: new Date().getFullYear(),
+          },
   });
 
   const mutation = useMutation({
@@ -60,8 +69,9 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
         ? cumplimientoLegalApi.permisosCirculacion.update(permiso.id, data)
         : cumplimientoLegalApi.permisosCirculacion.create(data);
     },
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ['permisos-circulacion'] });
+      queryClient.invalidateQueries({ queryKey: ['permisos-circulacion', variables.vehiculoPatente] });
       onSuccess();
     },
   });
@@ -77,6 +87,7 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
         <select
           {...register('vehiculoPatente')}
           className="w-full px-3 py-2 border border-gray-300 rounded"
+          disabled={!!vehiculoPatente}
         >
           <option value="">Seleccione un vehículo</option>
           {vehiculos.map((v) => (

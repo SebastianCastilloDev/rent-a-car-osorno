@@ -25,11 +25,13 @@ type RevisionFormData = z.infer<typeof revisionSchema>;
 
 interface RevisionTecnicaFormProps {
   revision?: RevisionTecnica | null;
+  vehiculoPatente?: string;
   onSuccess: () => void;
 }
 
 export const RevisionTecnicaForm: React.FC<RevisionTecnicaFormProps> = ({
   revision,
+  vehiculoPatente,
   onSuccess,
 }) => {
   const queryClient = useQueryClient();
@@ -51,7 +53,11 @@ export const RevisionTecnicaForm: React.FC<RevisionTecnicaFormProps> = ({
           ...revision,
           fechaRevision: revision.fechaRevision.split('T')[0],
         }
-      : undefined,
+      : vehiculoPatente
+        ? {
+            vehiculoPatente,
+          }
+        : undefined,
   });
 
   const mutation = useMutation({
@@ -60,8 +66,9 @@ export const RevisionTecnicaForm: React.FC<RevisionTecnicaFormProps> = ({
         ? cumplimientoLegalApi.revisionesTecnicas.update(revision.id, data)
         : cumplimientoLegalApi.revisionesTecnicas.create(data);
     },
-    onSuccess: () => {
+    onSuccess: (_, variables) => {
       queryClient.invalidateQueries({ queryKey: ['revisiones-tecnicas'] });
+      queryClient.invalidateQueries({ queryKey: ['revisiones-tecnicas', variables.vehiculoPatente] });
       onSuccess();
     },
   });
@@ -77,6 +84,7 @@ export const RevisionTecnicaForm: React.FC<RevisionTecnicaFormProps> = ({
         <select
           {...register('vehiculoPatente')}
           className="w-full px-3 py-2 border border-gray-300 rounded"
+          disabled={!!vehiculoPatente}
         >
           <option value="">Seleccione un vehículo</option>
           {vehiculos.map((v) => (
