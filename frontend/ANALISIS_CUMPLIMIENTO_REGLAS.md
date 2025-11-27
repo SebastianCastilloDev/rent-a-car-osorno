@@ -99,3 +99,4 @@ El cambio completo a español requeriría una refactorización extensa. Se recom
 2. Luego ir renombrando gradualmente componentes y funciones
 3. Mantener algunos nombres técnicos en inglés si son estándar de la industria (ej: `token`, `API`, `JWT`)
 
+

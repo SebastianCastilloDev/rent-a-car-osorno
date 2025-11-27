@@ -131,3 +131,4 @@ export const GastoForm: React.FC<GastoFormProps> = ({ gasto, onSuccess }) => {
   );
 };
 
+

@@ -48,3 +48,4 @@ export const TableCell: React.FC<TableCellProps> = ({ children }) => {
   return <td className="border border-gray-300 px-4 py-2">{children}</td>;
 };
 
+
