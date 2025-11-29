@@ -7,10 +7,10 @@ const menuItems = [
   { href: '/dashboard', label: 'Dashboard' },
   { href: '/vehiculos', label: 'Vehículos' },
   { href: '/choferes', label: 'Choferes' },
-  { href: '/cumplimiento-legal/revisiones-tecnicas', label: 'Revisiones Técnicas' },
-  { href: '/cumplimiento-legal/permisos-circulacion', label: 'Permisos de Circulación' },
+  { href: '/cumplimiento-legal', label: 'Cumplimiento Legal' },
   { href: '/gastos', label: 'Gastos' },
   { href: '/multas', label: 'Multas' },
+  { href: '/usuarios', label: 'Usuarios' },
 ];
 
 export const Sidebar = () => {

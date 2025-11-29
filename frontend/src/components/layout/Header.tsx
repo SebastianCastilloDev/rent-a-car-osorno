@@ -1,10 +1,17 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { useAuthStore } from '@/src/store/auth-store';
 import { Button } from '../ui/Button';
 
 export const Header = () => {
+  const router = useRouter();
   const { user, logout } = useAuthStore();
+
+  const handleLogout = () => {
+    logout();
+    router.push('/login');
+  };
 
   return (
     <header className="bg-white border-b border-gray-200 px-6 py-4">
@@ -16,7 +23,7 @@ export const Header = () => {
               {user.nombre} {user.apellido}
             </span>
           )}
-          <Button variant="secondary" onClick={logout}>
+          <Button variant="secondary" onClick={handleLogout}>
             Cerrar Sesión
           </Button>
         </div>
