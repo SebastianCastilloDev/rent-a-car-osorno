@@ -14,40 +14,40 @@ export const ApiPropertyOptional = (..._args: unknown[]) => () => undefined;
 // Utilidades de tipos (se devuelven tal cual para no romper en tiempo de ejecución)
 export const PartialType = (classRef: unknown): unknown => classRef;
 export const PickType = (classRef: unknown, _keys: string[]): unknown =>
-  classRef;
+    classRef;
 export const OmitType = (classRef: unknown, _keys: string[]): unknown =>
-  classRef;
+    classRef;
 
 // Clases utilizadas solo en configuración de Swagger; se mockean mínimamente.
 export class DocumentBuilder {
-  addBearerAuth(): this {
-    return this;
-  }
+    addBearerAuth(): this {
+        return this;
+    }
 
-  setTitle(_title: string): this {
-    return this;
-  }
+    setTitle(_title: string): this {
+        return this;
+    }
 
-  setDescription(_description: string): this {
-    return this;
-  }
+    setDescription(_description: string): this {
+        return this;
+    }
 
-  setVersion(_version: string): this {
-    return this;
-  }
+    setVersion(_version: string): this {
+        return this;
+    }
 
-  build(): unknown {
-    return {};
-  }
+    build(): unknown {
+        return {};
+    }
 }
 
 export class SwaggerModule {
-  static createDocument(): unknown {
-    return {};
-  }
+    static createDocument(): unknown {
+        return {};
+    }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  static setup(): void {}
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
+    static setup(): void { }
 }
 
 
