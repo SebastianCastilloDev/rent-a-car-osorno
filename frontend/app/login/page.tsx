@@ -64,7 +64,6 @@ export default function LoginPage() {
           </div>
         )}
 
-        {/* @ts-expect-error react-hook-form type inference issue with React 19 */}
         <form onSubmit={formMethods.handleSubmit(onSubmit)} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
