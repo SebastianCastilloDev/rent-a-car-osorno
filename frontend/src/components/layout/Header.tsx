@@ -6,10 +6,10 @@ import { Button } from '../ui/Button';
 
 export const Header = () => {
   const router = useRouter();
-  const { user, logout } = useAuthStore();
+  const { usuario, cerrarSesion } = useAuthStore();
 
-  const handleLogout = () => {
-    logout();
+  const manejarCierreSesion = () => {
+    cerrarSesion();
     router.push('/login');
   };
 
@@ -18,12 +18,12 @@ export const Header = () => {
       <div className="flex justify-between items-center">
         <h1 className="text-xl font-bold">Rent-a-Car</h1>
         <div className="flex items-center gap-4">
-          {user && (
+          {usuario && (
             <span className="text-sm text-gray-600">
-              {user.nombre} {user.apellido}
+              {usuario.nombre} {usuario.apellido}
             </span>
           )}
-          <Button variant="secondary" onClick={handleLogout}>
+          <Button variant="secondary" onClick={manejarCierreSesion}>
             Cerrar Sesión
           </Button>
         </div>

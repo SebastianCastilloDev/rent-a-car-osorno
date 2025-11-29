@@ -3,55 +3,55 @@
 import { create } from 'zustand';
 import { LoginResponse } from '@/src/types/auth.types';
 
-interface AuthState {
+interface EstadoAutenticacion {
     token: string | null;
-    user: LoginResponse['usuario'] | null;
-    isAuthenticated: boolean;
-    login: (response: LoginResponse) => void;
-    logout: () => void;
+    usuario: LoginResponse['usuario'] | null;
+    estaAutenticado: boolean;
+    iniciarSesion: (response: LoginResponse) => void;
+    cerrarSesion: () => void;
 }
 
-const getStoredAuth = () => {
+const obtenerAutenticacionAlmacenada = () => {
     if (globalThis.window === undefined) {
-        return { token: null, user: null };
+        return { token: null, usuario: null };
     }
 
-    const storedToken = globalThis.window.localStorage.getItem('auth_token');
-    const storedUser = globalThis.window.localStorage.getItem('auth_user');
+    const tokenAlmacenado = globalThis.window.localStorage.getItem('auth_token');
+    const usuarioAlmacenado = globalThis.window.localStorage.getItem('auth_user');
 
     return {
-        token: storedToken,
-        user: storedUser ? JSON.parse(storedUser) : null,
+        token: tokenAlmacenado,
+        usuario: usuarioAlmacenado ? JSON.parse(usuarioAlmacenado) : null,
     };
 };
 
-export const useAuthStore = create<AuthState>((set) => {
-    const stored = getStoredAuth();
+export const useAuthStore = create<EstadoAutenticacion>((set) => {
+    const almacenado = obtenerAutenticacionAlmacenada();
 
     return {
-        token: stored.token,
-        user: stored.user,
-        isAuthenticated: !!stored.token,
-        login: (response: LoginResponse) => {
+        token: almacenado.token,
+        usuario: almacenado.usuario,
+        estaAutenticado: !!almacenado.token,
+        iniciarSesion: (response: LoginResponse) => {
             if (globalThis.window !== undefined) {
                 globalThis.window.localStorage.setItem('auth_token', response.access_token);
                 globalThis.window.localStorage.setItem('auth_user', JSON.stringify(response.usuario));
             }
             set({
                 token: response.access_token,
-                user: response.usuario,
-                isAuthenticated: true,
+                usuario: response.usuario,
+                estaAutenticado: true,
             });
         },
-        logout: () => {
+        cerrarSesion: () => {
             if (globalThis.window !== undefined) {
                 globalThis.window.localStorage.removeItem('auth_token');
                 globalThis.window.localStorage.removeItem('auth_user');
             }
             set({
                 token: null,
-                user: null,
-                isAuthenticated: false,
+                usuario: null,
+                estaAutenticado: false,
             });
         },
     };

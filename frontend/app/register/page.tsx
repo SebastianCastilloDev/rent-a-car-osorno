@@ -13,56 +13,56 @@ import { Button } from '@/src/components/ui/Button';
 import { ApiError } from '@/src/types/api.types';
 import { validarRUT, limpiarRUT } from '@/src/lib/utils/validators';
 
-const registerSchema = z.object({
+const esquemaRegistro = z.object({
   rut: z.string().refine(validarRUT, 'RUT inválido'),
   nombre: z.string().min(1, 'Nombre requerido'),
   apellido: z.string().min(1, 'Apellido requerido'),
   email: z.string().email('Email inválido'),
   password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
-  confirmPassword: z.string().min(1, 'Confirma tu contraseña'),
+  confirmarPassword: z.string().min(1, 'Confirma tu contraseña'),
   rol: z.enum(['admin', 'usuario']),
-}).refine((data) => data.password === data.confirmPassword, {
+}).refine((datos) => datos.password === datos.confirmarPassword, {
   message: 'Las contraseñas no coinciden',
-  path: ['confirmPassword'],
+  path: ['confirmarPassword'],
 });
 
-type RegisterFormData = z.infer<typeof registerSchema>;
+type DatosFormularioRegistro = z.infer<typeof esquemaRegistro>;
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { login } = useAuthStore();
+  const { iniciarSesion } = useAuthStore();
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [estaCargando, setEstaCargando] = useState(false);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<RegisterFormData>({
-    resolver: zodResolver(registerSchema),
+  } = useForm<DatosFormularioRegistro>({
+    resolver: zodResolver(esquemaRegistro),
     defaultValues: {
       rol: 'usuario',
     },
   });
 
-  const onSubmit = async (data: RegisterFormData) => {
-    setIsLoading(true);
+  const alEnviar = async (datos: DatosFormularioRegistro) => {
+    setEstaCargando(true);
     setError(null);
 
     try {
-      const { confirmPassword, ...registerData } = data;
-      const cleanData = {
-        ...registerData,
-        rut: limpiarRUT(registerData.rut),
+      const { confirmarPassword, ...datosRegistro } = datos;
+      const datosLimpios = {
+        ...datosRegistro,
+        rut: limpiarRUT(datosRegistro.rut),
       };
-      const response = await authApi.register(cleanData);
-      login(response);
+      const respuesta = await authApi.register(datosLimpios);
+      iniciarSesion(respuesta);
       router.push('/dashboard');
     } catch (err) {
-      const error = err as ApiError;
-      setError(error.message || 'Error al registrar usuario');
+      const errorApi = err as ApiError;
+      setError(errorApi.message || 'Error al registrar usuario');
     } finally {
-      setIsLoading(false);
+      setEstaCargando(false);
     }
   };
 
@@ -81,7 +81,7 @@ export default function RegisterPage() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={handleSubmit(alEnviar)} className="space-y-6">
           <div className="grid grid-cols-2 gap-6">
             <div>
               <label htmlFor="rut" className="block text-sm font-medium text-gray-700 mb-2">
@@ -90,7 +90,7 @@ export default function RegisterPage() {
               <input
                 id="rut"
                 {...register('rut')}
-                placeholder="123456789"
+                placeholder="12345678-9"
                 className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               />
               {errors.rut && (
@@ -179,27 +179,27 @@ export default function RegisterPage() {
           </div>
 
           <div>
-            <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700 mb-2">
+            <label htmlFor="confirmarPassword" className="block text-sm font-medium text-gray-700 mb-2">
               Confirmar Contraseña
             </label>
             <input
-              id="confirmPassword"
+              id="confirmarPassword"
               type="password"
-              {...register('confirmPassword')}
+              {...register('confirmarPassword')}
               className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
               placeholder="••••••••"
             />
-            {errors.confirmPassword && (
-              <p className="mt-1.5 text-sm text-red-600">{errors.confirmPassword.message}</p>
+            {errors.confirmarPassword && (
+              <p className="mt-1.5 text-sm text-red-600">{errors.confirmarPassword.message}</p>
             )}
           </div>
 
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={estaCargando}
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium text-base hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
           >
-            {isLoading ? 'Registrando...' : 'Crear Cuenta'}
+            {estaCargando ? 'Registrando...' : 'Crear Cuenta'}
           </button>
         </form>
 

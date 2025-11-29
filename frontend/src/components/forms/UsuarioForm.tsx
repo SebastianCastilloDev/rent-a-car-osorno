@@ -99,11 +99,14 @@ export function UsuarioForm({ usuario, onSuccess }: UsuarioFormProps) {
         data: updateData as UsuarioFormData,
       });
     } else {
-      if (!cleanData.password) {
+      if (!cleanData.password || cleanData.password === '') {
         alert('La contraseña es requerida');
         return;
       }
-      await createMutation.mutateAsync(cleanData);
+      await createMutation.mutateAsync({
+        ...cleanData,
+        password: cleanData.password,
+      });
     }
   };
 

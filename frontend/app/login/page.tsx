@@ -10,42 +10,42 @@ import { authApi } from '@/src/lib/api/resources/auth.api';
 import { useAuthStore } from '@/src/store/auth-store';
 import { ApiError } from '@/src/types/api.types';
 
-const loginSchema = z.object({
+const esquemaLogin = z.object({
   email: z.string().email('Email inválido'),
   password: z.string().min(1, 'La contraseña es requerida'),
 });
 
-type LoginFormData = z.infer<typeof loginSchema>;
+type DatosFormularioLogin = z.infer<typeof esquemaLogin>;
 
 export default function LoginPage() {
   const router = useRouter();
-  const { login } = useAuthStore();
+  const { iniciarSesion } = useAuthStore();
   const [error, setError] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [estaCargando, setEstaCargando] = useState(false);
 
-  const formMethods = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+  const metodosFormulario = useForm<DatosFormularioLogin>({
+    resolver: zodResolver(esquemaLogin),
     defaultValues: {
       email: '',
       password: '',
     },
   });
 
-  const { register, formState: { errors } } = formMethods;
+  const { register, formState: { errors } } = metodosFormulario;
 
-  const onSubmit = async (data: LoginFormData) => {
-    setIsLoading(true);
+  const alEnviar = async (datos: DatosFormularioLogin) => {
+    setEstaCargando(true);
     setError(null);
 
     try {
-      const response = await authApi.login(data);
-      login(response);
+      const respuesta = await authApi.login(datos);
+      iniciarSesion(respuesta);
       router.push('/dashboard');
     } catch (err) {
-      const error = err as ApiError;
-      setError(error.message || 'Error al iniciar sesión');
+      const errorApi = err as ApiError;
+      setError(errorApi.message || 'Error al iniciar sesión');
     } finally {
-      setIsLoading(false);
+      setEstaCargando(false);
     }
   };
 
@@ -64,7 +64,7 @@ export default function LoginPage() {
           </div>
         )}
 
-        <form onSubmit={formMethods.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={metodosFormulario.handleSubmit(alEnviar)} className="space-y-6">
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
               Email
@@ -99,10 +99,10 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            disabled={isLoading}
+            disabled={estaCargando}
             className="w-full bg-blue-600 text-white py-3 px-4 rounded-md font-medium text-base hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:bg-blue-400 disabled:cursor-not-allowed transition-colors"
           >
-            {isLoading ? 'Iniciando sesión...' : 'Iniciar Sesión'}
+            {estaCargando ? 'Iniciando sesión...' : 'Iniciar Sesión'}
           </button>
         </form>
 
