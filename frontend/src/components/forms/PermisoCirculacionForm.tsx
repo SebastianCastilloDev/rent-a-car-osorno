@@ -37,6 +37,32 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
   const queryClient = useQueryClient();
   const isEdit = !!permiso;
 
+  let valoresPorDefectoFormularioPermisoCirculacion: PermisoFormData;
+
+  if (permiso) {
+    valoresPorDefectoFormularioPermisoCirculacion = {
+      vehiculoPatente: permiso.vehiculoPatente,
+      anio: permiso.anio,
+      montoPermiso: permiso.montoPermiso,
+      montoSoap: permiso.montoSoap,
+      fechaPago: permiso.fechaPago?.split('T')[0],
+    };
+  } else if (vehiculoPatente) {
+    valoresPorDefectoFormularioPermisoCirculacion = {
+      vehiculoPatente,
+      anio: new Date().getFullYear(),
+      montoPermiso: 0,
+      montoSoap: 0,
+    };
+  } else {
+    valoresPorDefectoFormularioPermisoCirculacion = {
+      vehiculoPatente: '',
+      anio: new Date().getFullYear(),
+      montoPermiso: 0,
+      montoSoap: 0,
+    };
+  }
+
   const { data: vehiculos = [] } = useQuery({
     queryKey: ['vehiculos'],
     queryFn: vehiculosApi.getAll,
@@ -48,19 +74,7 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
     formState: { errors },
   } = useForm<PermisoFormData>({
     resolver: zodResolver(permisoSchema),
-    defaultValues: permiso
-      ? {
-          ...permiso,
-          fechaPago: permiso.fechaPago?.split('T')[0],
-        }
-      : vehiculoPatente
-        ? {
-            vehiculoPatente,
-            anio: new Date().getFullYear(),
-          }
-        : {
-            anio: new Date().getFullYear(),
-          },
+    defaultValues: valoresPorDefectoFormularioPermisoCirculacion,
   });
 
   const mutation = useMutation({
@@ -80,11 +94,25 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
     mutation.mutate(data as CreatePermisoCirculacionInput);
   };
 
+  let textoBotonFormularioPermisoCirculacion = 'Crear';
+  if (isEdit) {
+    textoBotonFormularioPermisoCirculacion = 'Actualizar';
+  }
+  if (mutation.isPending) {
+    textoBotonFormularioPermisoCirculacion = 'Guardando...';
+  }
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <label className="block text-sm font-medium mb-1">Vehículo</label>
+        <label
+          htmlFor="permiso-circulacion-vehiculo"
+          className="block text-sm font-medium mb-1"
+        >
+          Vehículo
+        </label>
         <select
+          id="permiso-circulacion-vehiculo"
           {...register('vehiculoPatente')}
           className="w-full px-3 py-2 border border-gray-300 rounded"
           disabled={!!vehiculoPatente}
@@ -133,7 +161,7 @@ export const PermisoCirculacionForm: React.FC<PermisoCirculacionFormProps> = ({
 
       <div className="flex justify-end gap-2">
         <Button type="submit" disabled={mutation.isPending}>
-          {mutation.isPending ? 'Guardando...' : isEdit ? 'Actualizar' : 'Crear'}
+          {textoBotonFormularioPermisoCirculacion}
         </Button>
       </div>
     </form>
