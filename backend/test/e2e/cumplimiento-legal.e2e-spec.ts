@@ -11,7 +11,7 @@ import {
 describe('Cumplimiento Legal - Revisiones Técnicas y Permisos de Circulación (e2e)', () => {
     let app: INestApplication;
     let tokenJwt: string;
-    const patenteVehiculo = 'BB1234';
+    const patenteVehiculo = 'BBCC12';
     let idRevisionTecnica: number;
     let idPermisoCirculacion: number;
 

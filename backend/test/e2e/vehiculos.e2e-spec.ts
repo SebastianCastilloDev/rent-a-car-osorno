@@ -8,7 +8,7 @@ import { registrarYObtenerTokenJwtParaPruebas } from './utilidades-autenticacion
 describe('Vehículos - CRUD (e2e)', () => {
     let app: INestApplication;
     let tokenJwt: string;
-    const patenteVehiculo = 'AA1234';
+    const patenteVehiculo = 'AABB12';
 
     beforeAll(async () => {
         const moduloPruebas: TestingModule = await Test.createTestingModule({

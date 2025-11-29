@@ -8,7 +8,7 @@ import { registrarYObtenerTokenJwtParaPruebas } from './utilidades-autenticacion
 describe('Choferes - CRUD (e2e)', () => {
     let app: INestApplication;
     let tokenJwt: string;
-    const rutChofer = '12345678K';
+    const rutChofer = '123456785';
 
     beforeAll(async () => {
         const moduloPruebas: TestingModule = await Test.createTestingModule({

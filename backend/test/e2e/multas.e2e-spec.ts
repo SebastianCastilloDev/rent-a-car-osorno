@@ -9,7 +9,7 @@ import { EstadoPagoMulta } from '../../src/common/constants';
 describe('Multas - CRUD (e2e)', () => {
     let app: INestApplication;
     let tokenJwt: string;
-    const patenteVehiculo = 'DD1234';
+    const patenteVehiculo = 'DDEE12';
     let idMulta: number;
 
     beforeAll(async () => {

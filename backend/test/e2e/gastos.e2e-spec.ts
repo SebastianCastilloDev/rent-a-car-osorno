@@ -9,7 +9,7 @@ import { CategoriaGasto } from '../../src/common/constants';
 describe('Gastos - CRUD (e2e)', () => {
     let app: INestApplication;
     let tokenJwt: string;
-    const patenteVehiculo = 'CC1234';
+    const patenteVehiculo = 'CCDD12';
     let idGasto: number;
 
     beforeAll(async () => {
