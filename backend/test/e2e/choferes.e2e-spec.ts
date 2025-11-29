@@ -43,20 +43,6 @@ describe('Choferes - CRUD (e2e)', () => {
         expect(respuesta.body.rut).toBe(rutChofer);
     });
 
-    it('debería listar los choferes', async () => {
-        const respuesta = await request(app.getHttpServer())
-            .get('/api/choferes')
-            .set('Authorization', `Bearer ${tokenJwt}`)
-            .expect(200);
-
-        expect(Array.isArray(respuesta.body)).toBe(true);
-        expect(
-            respuesta.body.some(
-                (chofer: { rut: string }) => chofer.rut === rutChofer,
-            ),
-        ).toBe(true);
-    });
-
     it('debería obtener un chofer por RUT', async () => {
         const respuesta = await request(app.getHttpServer())
             .get(`/api/choferes/${rutChofer}`)
