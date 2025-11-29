@@ -5,6 +5,7 @@ export interface Chofer {
   nombre: string;
   apellido: string;
   telefono?: string;
+  activo: boolean;
   fechaCreacion: string;
   fechaActualizacion: string;
   vehiculos?: Vehiculo[];
