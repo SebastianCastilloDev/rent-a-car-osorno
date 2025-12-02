@@ -9,3 +9,4 @@ export class RechazarUsuarioDto {
   motivoRechazo: string;
 }
 
+

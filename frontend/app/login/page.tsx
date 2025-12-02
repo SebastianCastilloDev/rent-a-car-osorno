@@ -21,6 +21,7 @@ export default function LoginPage() {
   const router = useRouter();
   const { iniciarSesion } = useAuthStore();
   const [error, setError] = useState<string | null>(null);
+  const [tipoError, setTipoError] = useState<'general' | 'pendiente' | 'rechazado' | 'suspendido'>('general');
   const [estaCargando, setEstaCargando] = useState(false);
 
   const metodosFormulario = useForm<DatosFormularioLogin>({
@@ -36,6 +37,7 @@ export default function LoginPage() {
   const alEnviar = async (datos: DatosFormularioLogin) => {
     setEstaCargando(true);
     setError(null);
+    setTipoError('general');
 
     try {
       const respuesta = await authApi.login(datos);
@@ -43,7 +45,18 @@ export default function LoginPage() {
       router.push('/dashboard');
     } catch (err) {
       const errorApi = err as ApiError;
-      setError(errorApi.message || 'Error al iniciar sesión');
+      const mensaje = errorApi.message || 'Error al iniciar sesión';
+      
+      // Detectar tipo de error según el mensaje
+      if (mensaje.toLowerCase().includes('pendiente')) {
+        setTipoError('pendiente');
+      } else if (mensaje.toLowerCase().includes('rechazada')) {
+        setTipoError('rechazado');
+      } else if (mensaje.toLowerCase().includes('suspendida')) {
+        setTipoError('suspendido');
+      }
+      
+      setError(mensaje);
     } finally {
       setEstaCargando(false);
     }
@@ -59,8 +72,22 @@ export default function LoginPage() {
         </div>
 
         {error && (
-          <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-800 rounded-md text-sm">
-            {error}
+          <div className={`mb-6 p-4 border rounded-md text-sm ${
+            tipoError === 'pendiente' 
+              ? 'bg-yellow-50 border-yellow-200 text-yellow-800'
+              : 'bg-red-50 border-red-200 text-red-800'
+          }`}>
+            <p className="font-medium mb-1">{error}</p>
+            {tipoError === 'pendiente' && (
+              <p className="text-xs mt-2">
+                Tu cuenta será revisada por un administrador. Te notificaremos cuando sea aprobada.
+              </p>
+            )}
+            {tipoError === 'rechazado' && (
+              <p className="text-xs mt-2">
+                Contacta al administrador del sistema para más información.
+              </p>
+            )}
           </div>
         )}
 

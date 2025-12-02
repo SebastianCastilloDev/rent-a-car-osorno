@@ -20,7 +20,6 @@ const esquemaRegistro = z.object({
   email: z.string().email('Email inválido'),
   password: z.string().min(8, 'La contraseña debe tener al menos 8 caracteres'),
   confirmarPassword: z.string().min(1, 'Confirma tu contraseña'),
-  rol: z.enum(['admin', 'usuario']),
 }).refine((datos) => datos.password === datos.confirmarPassword, {
   message: 'Las contraseñas no coinciden',
   path: ['confirmarPassword'],
@@ -32,6 +31,7 @@ export default function RegisterPage() {
   const router = useRouter();
   const { iniciarSesion } = useAuthStore();
   const [error, setError] = useState<string | null>(null);
+  const [mensajeExito, setMensajeExito] = useState<string | null>(null);
   const [estaCargando, setEstaCargando] = useState(false);
 
   const {
@@ -40,14 +40,12 @@ export default function RegisterPage() {
     formState: { errors },
   } = useForm<DatosFormularioRegistro>({
     resolver: zodResolver(esquemaRegistro),
-    defaultValues: {
-      rol: 'usuario',
-    },
   });
 
   const alEnviar = async (datos: DatosFormularioRegistro) => {
     setEstaCargando(true);
     setError(null);
+    setMensajeExito(null);
 
     try {
       const { confirmarPassword, ...datosRegistro } = datos;
@@ -56,8 +54,17 @@ export default function RegisterPage() {
         rut: limpiarRUT(datosRegistro.rut),
       };
       const respuesta = await authApi.register(datosLimpios);
-      iniciarSesion(respuesta);
-      router.push('/dashboard');
+      
+      // Si tiene access_token, es Super Admin o usuario aprobado
+      if (respuesta.access_token) {
+        iniciarSesion(respuesta as any);
+        setMensajeExito(respuesta.mensaje || 'Registro exitoso');
+        setTimeout(() => router.push('/dashboard'), 1500);
+      } else {
+        // Usuario normal pendiente de aprobación
+        setMensajeExito(respuesta.mensaje);
+        setTimeout(() => router.push('/esperando-aprobacion'), 3000);
+      }
     } catch (err) {
       const errorApi = err as ApiError;
       setError(errorApi.message || 'Error al registrar usuario');
@@ -81,39 +88,26 @@ export default function RegisterPage() {
           </div>
         )}
 
-        <form onSubmit={handleSubmit(alEnviar)} className="space-y-6">
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-              <label htmlFor="rut" className="block text-sm font-medium text-gray-700 mb-2">
-                RUT
-              </label>
-              <input
-                id="rut"
-                {...register('rut')}
-                placeholder="12345678-9"
-                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              />
-              {errors.rut && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.rut.message}</p>
-              )}
-            </div>
+        {mensajeExito && (
+          <div className="mb-6 p-4 bg-green-50 border border-green-200 text-green-800 rounded-md text-sm">
+            {mensajeExito}
+          </div>
+        )}
 
-            <div>
-              <label htmlFor="rol" className="block text-sm font-medium text-gray-700 mb-2">
-                Rol
-              </label>
-              <select
-                id="rol"
-                {...register('rol')}
-                className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-              >
-                <option value="usuario">Usuario</option>
-                <option value="admin">Administrador</option>
-              </select>
-              {errors.rol && (
-                <p className="mt-1.5 text-sm text-red-600">{errors.rol.message}</p>
-              )}
-            </div>
+        <form onSubmit={handleSubmit(alEnviar)} className="space-y-6">
+          <div>
+            <label htmlFor="rut" className="block text-sm font-medium text-gray-700 mb-2">
+              RUT
+            </label>
+            <input
+              id="rut"
+              {...register('rut')}
+              placeholder="12345678-9"
+              className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            />
+            {errors.rut && (
+              <p className="mt-1.5 text-sm text-red-600">{errors.rut.message}</p>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-6">
