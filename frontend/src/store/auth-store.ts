@@ -29,35 +29,44 @@ const obtenerAutenticacionAlmacenada = () => {
     };
 };
 
-export const useAuthStore = create<EstadoAutenticacion>((set, get) => {
+const calcularPropiedadesUsuario = (usuario: UsuarioAutenticado | null) => {
+    if (!usuario) {
+        return {
+            estadoUsuario: null,
+            esSuperAdmin: false,
+            esAdmin: false,
+            esUsuarioNormal: false,
+        };
+    }
+
+    return {
+        estadoUsuario: usuario.estado || null,
+        esSuperAdmin: usuario.rol === 'super_admin',
+        esAdmin: usuario.rol === 'admin' || usuario.rol === 'super_admin',
+        esUsuarioNormal: usuario.rol === 'usuario',
+    };
+};
+
+export const useAuthStore = create<EstadoAutenticacion>((set) => {
     const almacenado = obtenerAutenticacionAlmacenada();
+    const propiedadesUsuario = calcularPropiedadesUsuario(almacenado.usuario);
 
     return {
         token: almacenado.token,
         usuario: almacenado.usuario,
         estaAutenticado: !!almacenado.token,
-        get estadoUsuario() {
-            return get().usuario?.estado || null;
-        },
-        get esSuperAdmin() {
-            return get().usuario?.rol === 'super_admin';
-        },
-        get esAdmin() {
-            const rol = get().usuario?.rol;
-            return rol === 'admin' || rol === 'super_admin';
-        },
-        get esUsuarioNormal() {
-            return get().usuario?.rol === 'usuario';
-        },
+        ...propiedadesUsuario,
         iniciarSesion: (response: LoginResponse) => {
             if (globalThis.window !== undefined) {
                 globalThis.window.localStorage.setItem('auth_token', response.access_token);
                 globalThis.window.localStorage.setItem('auth_user', JSON.stringify(response.usuario));
             }
+            const nuevasPropiedades = calcularPropiedadesUsuario(response.usuario);
             set({
                 token: response.access_token,
                 usuario: response.usuario,
                 estaAutenticado: true,
+                ...nuevasPropiedades,
             });
         },
         cerrarSesion: () => {
@@ -65,10 +74,12 @@ export const useAuthStore = create<EstadoAutenticacion>((set, get) => {
                 globalThis.window.localStorage.removeItem('auth_token');
                 globalThis.window.localStorage.removeItem('auth_user');
             }
+            const propiedadesVacias = calcularPropiedadesUsuario(null);
             set({
                 token: null,
                 usuario: null,
                 estaAutenticado: false,
+                ...propiedadesVacias,
             });
         },
     };

@@ -75,6 +75,8 @@ export default function LoginPage() {
           <div className={`mb-6 p-4 border rounded-md text-sm ${
             tipoError === 'pendiente' 
               ? 'bg-yellow-50 border-yellow-200 text-yellow-800'
+              : tipoError === 'suspendido'
+              ? 'bg-orange-50 border-orange-200 text-orange-800'
               : 'bg-red-50 border-red-200 text-red-800'
           }`}>
             <p className="font-medium mb-1">{error}</p>
@@ -86,6 +88,11 @@ export default function LoginPage() {
             {tipoError === 'rechazado' && (
               <p className="text-xs mt-2">
                 Contacta al administrador del sistema para más información.
+              </p>
+            )}
+            {tipoError === 'suspendido' && (
+              <p className="text-xs mt-2">
+                Tu cuenta ha sido suspendida. Contacta al administrador del sistema para más información sobre el motivo y los pasos para reactivarla.
               </p>
             )}
           </div>
