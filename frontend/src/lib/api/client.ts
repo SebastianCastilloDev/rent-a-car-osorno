@@ -46,10 +46,14 @@ class ApiClient {
           };
 
           // Si es 401, limpiar token y redirigir a login
+          // Pero NO redirigir si ya estamos en la página de login (para permitir que se muestre el mensaje de error)
           if (error.response.status === 401) {
             if (typeof window !== 'undefined') {
               localStorage.removeItem('auth_token');
-              window.location.href = '/login';
+              const rutaActual = window.location.pathname;
+              if (rutaActual !== '/login' && rutaActual !== '/register') {
+                window.location.href = '/login';
+              }
             }
           }
 

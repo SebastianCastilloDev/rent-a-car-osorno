@@ -72,29 +72,51 @@ export default function LoginPage() {
         </div>
 
         {error && (
-          <div className={`mb-6 p-4 border rounded-md text-sm ${
-            tipoError === 'pendiente' 
-              ? 'bg-yellow-50 border-yellow-200 text-yellow-800'
-              : tipoError === 'suspendido'
-              ? 'bg-orange-50 border-orange-200 text-orange-800'
-              : 'bg-red-50 border-red-200 text-red-800'
-          }`}>
-            <p className="font-medium mb-1">{error}</p>
-            {tipoError === 'pendiente' && (
-              <p className="text-xs mt-2">
-                Tu cuenta será revisada por un administrador. Te notificaremos cuando sea aprobada.
-              </p>
-            )}
-            {tipoError === 'rechazado' && (
-              <p className="text-xs mt-2">
-                Contacta al administrador del sistema para más información.
-              </p>
-            )}
-            {tipoError === 'suspendido' && (
-              <p className="text-xs mt-2">
-                Tu cuenta ha sido suspendida. Contacta al administrador del sistema para más información sobre el motivo y los pasos para reactivarla.
-              </p>
-            )}
+          <div 
+            className={`mb-6 p-5 border-2 rounded-lg text-sm shadow-lg transition-all duration-300 ease-in-out ${
+              tipoError === 'pendiente' 
+                ? 'bg-yellow-50 border-yellow-300 text-yellow-900'
+                : tipoError === 'suspendido'
+                ? 'bg-orange-50 border-orange-300 text-orange-900'
+                : 'bg-red-50 border-red-300 text-red-900'
+            }`}
+            role="alert"
+            aria-live="assertive"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex-1">
+                <p className="font-semibold mb-2 text-base leading-tight">{error}</p>
+                {tipoError === 'pendiente' && (
+                  <p className="text-sm mt-2 text-yellow-800 leading-relaxed">
+                    Tu cuenta será revisada por un administrador. Te notificaremos cuando sea aprobada.
+                  </p>
+                )}
+                {tipoError === 'rechazado' && (
+                  <p className="text-sm mt-2 text-red-800 leading-relaxed">
+                    Contacta al administrador del sistema para más información.
+                  </p>
+                )}
+                {tipoError === 'suspendido' && (
+                  <p className="text-sm mt-2 text-orange-800 leading-relaxed">
+                    Tu cuenta ha sido suspendida. Contacta al administrador del sistema para más información sobre el motivo y los pasos para reactivarla.
+                  </p>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={() => setError(null)}
+                className={`flex-shrink-0 p-1.5 rounded-md hover:bg-opacity-20 transition-colors text-lg font-bold leading-none ${
+                  tipoError === 'pendiente'
+                    ? 'hover:bg-yellow-600 text-yellow-700'
+                    : tipoError === 'suspendido'
+                    ? 'hover:bg-orange-600 text-orange-700'
+                    : 'hover:bg-red-600 text-red-700'
+                }`}
+                aria-label="Cerrar mensaje de error"
+              >
+                ×
+              </button>
+            </div>
           </div>
         )}
 
