@@ -16,7 +16,7 @@ const usuarioSchema = z.object({
   apellido: z.string().min(1, 'Apellido requerido'),
   email: z.string().email('Email inválido'),
   password: z.string().min(8, 'Mínimo 8 caracteres').optional().or(z.literal('')),
-  rol: z.enum(['admin', 'usuario']),
+  rol: z.enum(['super_admin', 'admin', 'usuario']),
   activo: z.boolean(),
 });
 
@@ -152,11 +152,18 @@ export function UsuarioForm({ usuario, onSuccess }: UsuarioFormProps) {
         </label>
         <select
           {...register('rol')}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+          disabled={isEditing && usuario?.rol === 'super_admin'}
+          className="w-full px-4 py-3 border border-gray-300 rounded-md text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
         >
           <option value="usuario">Usuario</option>
           <option value="admin">Administrador</option>
+          <option value="super_admin">Super Administrador</option>
         </select>
+        {isEditing && usuario?.rol === 'super_admin' && (
+          <p className="mt-1.5 text-xs text-gray-500">
+            El rol de Super Administrador no puede ser modificado
+          </p>
+        )}
         {errors.rol && (
           <p className="mt-1.5 text-sm text-red-600">{errors.rol.message}</p>
         )}

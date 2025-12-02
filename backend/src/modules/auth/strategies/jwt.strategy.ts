@@ -26,9 +26,11 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       }
 
       return {
-        rut: usuario.rut,
+        sub: usuario.rut, // Usado por los controladores para obtener el RUT del usuario autenticado
+        rut: usuario.rut, // Mantener por compatibilidad
         email: usuario.email,
         rol: usuario.rol,
+        estado: usuario.estado,
       };
     } catch (error) {
       // Si el usuario no existe o hay cualquier error, lanzar UnauthorizedException
