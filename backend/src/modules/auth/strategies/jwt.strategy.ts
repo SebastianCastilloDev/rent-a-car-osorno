@@ -18,16 +18,22 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
   }
 
   async validate(payload: any) {
-    const usuario = await this.usuariosService.encontrarPorRUT(payload.sub);
+    try {
+      const usuario = await this.usuariosService.encontrarPorRUT(payload.sub);
 
-    if (!usuario?.activo) {
+      if (!usuario?.activo) {
+        throw new UnauthorizedException('Usuario no autorizado');
+      }
+
+      return {
+        rut: usuario.rut,
+        email: usuario.email,
+        rol: usuario.rol,
+      };
+    } catch (error) {
+      // Si el usuario no existe o hay cualquier error, lanzar UnauthorizedException
+      // para que el interceptor del frontend maneje correctamente el 401
       throw new UnauthorizedException('Usuario no autorizado');
     }
-
-    return {
-      rut: usuario.rut,
-      email: usuario.email,
-      rol: usuario.rol,
-    };
   }
 }

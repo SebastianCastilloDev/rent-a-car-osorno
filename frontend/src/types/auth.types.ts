@@ -23,6 +23,16 @@ export interface UsuarioAutenticado {
   estado: EstadoUsuario;
 }
 
+// Tipo para usuario en respuesta de registro (rol es opcional para usuarios pendientes)
+export interface UsuarioRegistro {
+  email: string;
+  rut: string;
+  nombre: string;
+  apellido: string;
+  rol?: RolUsuario; // Opcional porque usuarios pendientes no tienen rol asignado aún
+  estado: EstadoUsuario;
+}
+
 export interface LoginResponse {
   access_token: string;
   usuario: UsuarioAutenticado;
@@ -31,6 +41,6 @@ export interface LoginResponse {
 
 export interface RegisterResponse {
   access_token?: string;
-  usuario: UsuarioAutenticado;
+  usuario: UsuarioRegistro;
   mensaje: string;
 }

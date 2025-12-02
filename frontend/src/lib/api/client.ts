@@ -1,5 +1,6 @@
 import axios, { AxiosInstance, AxiosError } from 'axios';
 import { ApiError } from '@/src/types/api.types';
+import { useAuthStore } from '@/src/store/auth-store';
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000/api';
 
@@ -45,11 +46,18 @@ class ApiClient {
             error: error.response.data?.error,
           };
 
-          // Si es 401, limpiar token y redirigir a login
+          // Si es 401, limpiar token, store y redirigir a login
           // Pero NO redirigir si ya estamos en la página de login (para permitir que se muestre el mensaje de error)
           if (error.response.status === 401) {
             if (typeof window !== 'undefined') {
+              // Limpiar localStorage
               localStorage.removeItem('auth_token');
+              localStorage.removeItem('auth_user');
+
+              // Limpiar store de Zustand
+              useAuthStore.getState().cerrarSesion();
+
+              // Redirigir solo si no estamos en login o register
               const rutaActual = window.location.pathname;
               if (rutaActual !== '/login' && rutaActual !== '/register') {
                 window.location.href = '/login';

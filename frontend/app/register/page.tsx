@@ -56,8 +56,17 @@ export default function RegisterPage() {
       const respuesta = await authApi.register(datosLimpios);
       
       // Si tiene access_token, es Super Admin o usuario aprobado
-      if (respuesta.access_token) {
-        iniciarSesion(respuesta as any);
+      if (respuesta.access_token && respuesta.usuario.rol) {
+        // Convertir RegisterResponse a LoginResponse para iniciarSesion
+        const loginResponse = {
+          access_token: respuesta.access_token,
+          usuario: {
+            ...respuesta.usuario,
+            rol: respuesta.usuario.rol, // Ya sabemos que existe por el if
+          },
+          mensaje: respuesta.mensaje,
+        };
+        iniciarSesion(loginResponse);
         setMensajeExito(respuesta.mensaje || 'Registro exitoso');
         setTimeout(() => router.push('/dashboard'), 1500);
       } else {
