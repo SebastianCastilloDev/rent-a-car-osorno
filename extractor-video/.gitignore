@@ -3,6 +3,8 @@ venv/
 *.wav
 *.m4a
 *.mp4
+*.opus
+*.webm
 transcripcion.txt
 __pycache__/
 *.pyc
