@@ -4,8 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
-import { RolUsuario } from '../../../common/constants';
+import { RolUsuario, EstadoUsuario } from '../../../common/constants';
 
 @Entity('usuarios')
 export class Usuario {
@@ -30,6 +32,27 @@ export class Usuario {
     default: RolUsuario.USUARIO,
   })
   rol: RolUsuario;
+
+  @Column({
+    type: 'enum',
+    enum: EstadoUsuario,
+    default: EstadoUsuario.PENDIENTE,
+    name: 'estado',
+  })
+  estado: EstadoUsuario;
+
+  @Column({ type: 'varchar', length: 12, nullable: true, name: 'aprobado_por' })
+  aprobadoPor: string;
+
+  @ManyToOne(() => Usuario, { nullable: true })
+  @JoinColumn({ name: 'aprobado_por' })
+  aprobadorUsuario: Usuario;
+
+  @Column({ type: 'timestamp', nullable: true, name: 'fecha_aprobacion' })
+  fechaAprobacion: Date;
+
+  @Column({ type: 'text', nullable: true, name: 'motivo_rechazo' })
+  motivoRechazo: string;
 
   @Column({ type: 'boolean', default: true })
   activo: boolean;

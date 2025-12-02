@@ -1,7 +1,16 @@
 // Roles de usuario
 export enum RolUsuario {
+  SUPER_ADMIN = 'super_admin',
   ADMIN = 'admin',
   USUARIO = 'usuario',
+}
+
+// Estados de usuario (aprobación)
+export enum EstadoUsuario {
+  PENDIENTE = 'pendiente',
+  APROBADO = 'aprobado',
+  RECHAZADO = 'rechazado',
+  SUSPENDIDO = 'suspendido',
 }
 
 // Estados de revisión técnica

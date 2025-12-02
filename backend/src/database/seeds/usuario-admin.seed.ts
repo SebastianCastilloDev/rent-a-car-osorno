@@ -1,7 +1,7 @@
 import { DataSource } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { Usuario } from '../../modules/usuarios/entities/usuario.entity';
-import { RolUsuario } from '../../common/constants';
+import { RolUsuario, EstadoUsuario } from '../../common/constants';
 
 export async function seedUsuarioAdmin(dataSource: DataSource): Promise<void> {
     const usuarioRepository = dataSource.getRepository(Usuario);
@@ -26,7 +26,8 @@ export async function seedUsuarioAdmin(dataSource: DataSource): Promise<void> {
         apellido: 'Sistema',
         email: 'admin@rentacar.cl',
         password: passwordHash,
-        rol: RolUsuario.ADMIN,
+        rol: RolUsuario.SUPER_ADMIN,
+        estado: EstadoUsuario.APROBADO,
         activo: true,
     });
 

@@ -1,12 +1,10 @@
 import {
   IsString,
   IsEmail,
-  IsEnum,
   IsNotEmpty,
   MinLength,
   Matches,
 } from 'class-validator';
-import { RolUsuario } from '../../../common/constants';
 
 export class RegisterDto {
   @IsString()
@@ -31,9 +29,6 @@ export class RegisterDto {
   @IsString()
   @MinLength(8)
   password: string;
-
-  @IsEnum(RolUsuario)
-  rol: RolUsuario;
 }
 
 
