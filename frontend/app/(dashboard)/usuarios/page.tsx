@@ -18,6 +18,7 @@ export default function UsuariosPage() {
   const [usuarioSeleccionado, setUsuarioSeleccionado] = useState<Usuario | null>(null);
   const [modalAprobar, setModalAprobar] = useState(false);
   const [modalRechazar, setModalRechazar] = useState(false);
+  const [modalEliminar, setModalEliminar] = useState(false);
   const [motivoRechazo, setMotivoRechazo] = useState('');
   const queryClient = useQueryClient();
 
@@ -56,6 +57,8 @@ export default function UsuariosPage() {
     mutationFn: usuariosApi.eliminar,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['usuarios'] });
+      setModalEliminar(false);
+      setUsuarioSeleccionado(null);
     },
   });
 
@@ -69,9 +72,14 @@ export default function UsuariosPage() {
     setModalAbierto(true);
   };
 
-  const manejarEliminar = async (rut: string) => {
-    if (confirm('¿Está seguro de eliminar este usuario?')) {
-      await eliminarMutation.mutateAsync(rut);
+  const abrirModalEliminar = (usuario: Usuario) => {
+    setUsuarioSeleccionado(usuario);
+    setModalEliminar(true);
+  };
+
+  const confirmarEliminar = async () => {
+    if (usuarioSeleccionado) {
+      await eliminarMutation.mutateAsync(usuarioSeleccionado.rut);
     }
   };
 
@@ -198,7 +206,7 @@ export default function UsuariosPage() {
                     <Button variant="secondary" onClick={() => manejarEditar(usuario)}>
                       Editar
                     </Button>
-                    <Button variant="danger" onClick={() => manejarEliminar(usuario.rut)}>
+                    <Button variant="danger" onClick={() => abrirModalEliminar(usuario)}>
                       Eliminar
                     </Button>
                   </>
@@ -290,6 +298,36 @@ export default function UsuariosPage() {
               disabled={rechazarMutation.isPending || !motivoRechazo.trim()}
             >
               {rechazarMutation.isPending ? 'Rechazando...' : 'Rechazar'}
+            </Button>
+          </div>
+        </div>
+      </Modal>
+
+      {/* Modal de eliminar */}
+      <Modal
+        isOpen={modalEliminar}
+        onClose={() => setModalEliminar(false)}
+        title="Eliminar Usuario"
+      >
+        <div className="space-y-4">
+          <p>¿Está seguro de eliminar este usuario?</p>
+          {usuarioSeleccionado && (
+            <div className="bg-gray-50 p-4 rounded">
+              <p><strong>Nombre:</strong> {usuarioSeleccionado.nombre} {usuarioSeleccionado.apellido}</p>
+              <p><strong>Email:</strong> {usuarioSeleccionado.email}</p>
+              <p><strong>RUT:</strong> {formatearRUT(usuarioSeleccionado.rut)}</p>
+            </div>
+          )}
+          <div className="flex gap-2 justify-end">
+            <Button variant="secondary" onClick={() => setModalEliminar(false)}>
+              Cancelar
+            </Button>
+            <Button 
+              variant="danger" 
+              onClick={confirmarEliminar}
+              disabled={eliminarMutation.isPending}
+            >
+              {eliminarMutation.isPending ? 'Eliminando...' : 'Eliminar'}
             </Button>
           </div>
         </div>

@@ -69,7 +69,7 @@ export class UsuariosService {
   async encontrarPorRUT(rut: string): Promise<Usuario> {
     const usuario = await this.usuarioRepository.findOne({
       where: { rut },
-      select: ['rut', 'nombre', 'apellido', 'email', 'rol', 'activo'],
+      select: ['rut', 'nombre', 'apellido', 'email', 'rol', 'activo', 'estado'],
     });
 
     if (!usuario) {

@@ -27,7 +27,6 @@ export default function EsperandoAprobacionPage() {
           <ul className="text-sm text-yellow-800 space-y-2">
             <li>✓ Tu cuenta ha sido registrada exitosamente</li>
             <li>⏳ Un administrador revisará tu solicitud</li>
-            <li>📧 Te notificaremos por email cuando sea aprobada</li>
           </ul>
         </div>
 
