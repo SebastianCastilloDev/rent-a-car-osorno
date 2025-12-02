@@ -63,11 +63,25 @@ SUPER_ADMIN_EMAILS=tu@email.com,otro@email.com
 6. Click en "Save Changes"
 7. Render reiniciará automáticamente el servicio
 
-### 2️⃣ Ejecutar Migración de Base de Datos
+### 2️⃣ Sincronización de Base de Datos
 
-La migración agregará las nuevas columnas y estados a la base de datos.
+**⚠️ IMPORTANTE**: Si estás usando `synchronize: true` en desarrollo, TypeORM creará automáticamente las nuevas columnas y enums cuando reinicies el servidor. **NO necesitas ejecutar migraciones**.
 
-#### Opción A: Via Render Shell (Recomendado)
+#### Si usas `synchronize: true` (Desarrollo)
+
+1. **Solo necesitas reiniciar el servidor**:
+   - Render reiniciará automáticamente cuando agregues la variable `SUPER_ADMIN_EMAILS`
+   - TypeORM detectará los cambios en las entidades y actualizará la BD automáticamente
+
+2. **Verificar que los cambios se aplicaron**:
+   - Revisar logs de Render para confirmar que no hay errores
+   - Verificar que las nuevas columnas existen en la BD
+
+#### Si usas `synchronize: false` (Producción - Migraciones)
+
+Solo si tienes `synchronize: false` en producción, necesitarás migraciones:
+
+**Opción A: Via Render Shell**
 1. En Render Dashboard, ve a tu servicio web
 2. Click en "Shell" en el menú lateral
 3. Ejecutar el comando:
@@ -75,25 +89,16 @@ La migración agregará las nuevas columnas y estados a la base de datos.
 yarn migration:run
 ```
 
-#### Opción B: Agregar Build Command (Automático en próximos deploys)
-1. En Render Dashboard, ve a tu servicio web
-2. En "Settings" → "Build & Deploy"
-3. Modificar el "Build Command":
+**Opción B: Generar migración desde entidades**
 ```bash
-yarn install && yarn build && yarn migration:run
-```
-4. Click "Save Changes"
-5. Hacer un nuevo deploy (el servicio ejecutará la migración automáticamente)
+# Primero generar la migración
+yarn migration:generate -n AgregarSistemaAprobacionUsuarios
 
-**⚠️ NOTA**: Si usas esta opción, las migraciones se ejecutarán en cada deploy.
-
-#### Opción C: Desde tu terminal local (conectado a BD de producción)
-```bash
-# CUIDADO: Esto modificará la base de datos de producción
-# Necesitas el DATABASE_URL de Render
-export DATABASE_URL="postgresql://user:password@host:port/dbname"
+# Luego ejecutarla
 yarn migration:run
 ```
+
+**⚠️ NOTA**: Si estás en desarrollo con `synchronize: true`, **NO necesitas hacer esto**. TypeORM lo hace automáticamente.
 
 ### 3️⃣ Verificar el Deployment
 
@@ -224,7 +229,8 @@ SELECT unnest(enum_range(NULL::usuarios_estado_enum));
 ## 🔒 Checklist de Seguridad Post-Deployment
 
 - [ ] Variable `SUPER_ADMIN_EMAILS` configurada en Render
-- [ ] Migración ejecutada correctamente
+- [ ] Servidor reiniciado (TypeORM sincronizará automáticamente si `synchronize: true`)
+- [ ] O migración ejecutada (solo si `synchronize: false` en producción)
 - [ ] Super Admin puede registrarse e iniciar sesión
 - [ ] Usuario normal queda en estado PENDIENTE
 - [ ] Usuario pendiente NO puede iniciar sesión
@@ -237,20 +243,29 @@ SELECT unnest(enum_range(NULL::usuarios_estado_enum));
 
 ## 🆘 Troubleshooting
 
-### Problema: "La migración falla"
+### Problema: "TypeORM no sincroniza los cambios"
 
-```bash
-# Opción A: Via Render Shell
-# 1. Ir a Render Dashboard → tu servicio → Shell
-# 2. Ejecutar:
-yarn migration:show
+Si usas `synchronize: true` y los cambios no se aplican:
 
-# Ver logs de error
-# Render Dashboard → Logs
+1. **Verificar configuración**:
+   - Revisar `database.config.ts` que `synchronize: true` esté activo
+   - Verificar que `NODE_ENV=development` o `TYPEORM_SYNCHRONIZE=true`
 
-# Revertir si es necesario
-yarn migration:revert
-```
+2. **Reiniciar servidor**:
+   - Render Dashboard → tu servicio → Manual Deploy → Clear build cache & deploy
+
+3. **Verificar logs**:
+   - Render Dashboard → Logs
+   - Buscar errores de TypeORM o PostgreSQL
+
+4. **Si necesitas migraciones** (solo si `synchronize: false`):
+   ```bash
+   # Generar migración desde entidades
+   yarn migration:generate -n AgregarSistemaAprobacionUsuarios
+   
+   # Ejecutar migración
+   yarn migration:run
+   ```
 
 ### Problema: "No puedo registrarme como Super Admin"
 

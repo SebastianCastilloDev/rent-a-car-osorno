@@ -43,7 +43,7 @@ backend/
 │   └── database/
 │       ├── data-source.ts ............................. [NUEVO] Configuración TypeORM CLI
 │       └── migrations/
-│           └── 1733184000000-AgregarSistemaAprobacionUsuarios.ts .. [NUEVO] Migración
+│           └── README.md ................................ [NUEVO] Documentación sobre migraciones
 ├── SISTEMA_APROBACION_USUARIOS.md ..................... [NUEVO] Documentación completa
 ├── VARIABLES_ENTORNO.md ............................... [NUEVO] Variables requeridas
 ├── INSTRUCCIONES_DEPLOYMENT_SISTEMA_APROBACION.md ..... [NUEVO] Guía de deployment
@@ -222,17 +222,21 @@ POST /api/auth/login
 # 5. Save Changes
 ```
 
-### Paso 2: Ejecutar Migración
+### Paso 2: Sincronización de Base de Datos
 
+**Si usas `synchronize: true` (Desarrollo)**:
+- ✅ **NO necesitas hacer nada**. TypeORM sincronizará automáticamente cuando reinicies el servidor
+- Solo agrega la variable `SUPER_ADMIN_EMAILS` y Render reiniciará automáticamente
+
+**Si usas `synchronize: false` (Producción con migraciones)**:
 ```bash
-# Opción A: Via Render Shell (Recomendado)
+# Opción A: Via Render Shell
 # 1. Render Dashboard → tu servicio → Shell
 # 2. Ejecutar:
 yarn migration:run
 
-# Opción B: Localmente (conectado a BD de producción en Render)
-# Necesitas el DATABASE_URL de Render
-export DATABASE_URL="postgresql://..."
+# Opción B: Generar migración primero
+yarn migration:generate -n AgregarSistemaAprobacionUsuarios
 yarn migration:run
 ```
 
@@ -311,7 +315,8 @@ curl -X POST http://localhost:3000/api/auth/register \
 
 ### Arquitectura
 
-- ✅ Migración de base de datos versionada
+- ✅ Sincronización automática con `synchronize: true` (desarrollo)
+- ✅ Migraciones preparadas para cuando pases a producción
 - ✅ Configuración por variable de entorno
 - ✅ Código modular y escalable
 - ✅ Documentación completa

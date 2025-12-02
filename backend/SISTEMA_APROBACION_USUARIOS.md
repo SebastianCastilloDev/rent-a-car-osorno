@@ -238,24 +238,45 @@ El sistema previene que un Super Admin sea suspendido.
 ### 6. ✅ Verificación de estado en login
 El sistema verifica el estado del usuario antes de permitir el login.
 
-## Migración de Base de Datos
+## Sincronización de Base de Datos
 
-Se incluye una migración que:
-1. Agrega el rol `SUPER_ADMIN` al enum de roles
-2. Crea el enum de estados de usuario
-3. Agrega columnas: `estado`, `aprobado_por`, `fecha_aprobacion`, `motivo_rechazo`
-4. Crea FK de `aprobado_por` hacia `usuarios`
-5. Actualiza usuarios existentes a estado `APROBADO`
+### Desarrollo con `synchronize: true`
 
-### Ejecutar Migración
+Si estás en desarrollo con `synchronize: true` (configuración actual):
+- ✅ **NO necesitas migraciones**
+- TypeORM creará/actualizará las tablas automáticamente cuando reinicies el servidor
+- Los cambios en las entidades se reflejarán automáticamente en la BD
 
+**Solo necesitas**:
+1. Agregar la variable `SUPER_ADMIN_EMAILS` en Render
+2. Render reiniciará automáticamente
+3. TypeORM sincronizará los cambios
+
+### Producción con `synchronize: false`
+
+Cuando pases a producción y uses `synchronize: false`:
+
+1. **Generar migración desde entidades**:
 ```bash
-# Ejecutar migración
-yarn migration:run
-
-# Revertir migración (si es necesario)
-yarn migration:revert
+yarn migration:generate -n AgregarSistemaAprobacionUsuarios
 ```
+
+2. **Ejecutar migración**:
+```bash
+yarn migration:run
+```
+
+La migración debería incluir:
+- Agregar el rol `SUPER_ADMIN` al enum de roles
+- Crear el enum de estados de usuario
+- Agregar columnas: `estado`, `aprobado_por`, `fecha_aprobacion`, `motivo_rechazo`
+- Crear FK de `aprobado_por` hacia `usuarios`
+- Actualizar usuarios existentes a estado `APROBADO`
+
+**⚠️ NOTA**: No se incluye una migración pre-generada porque:
+- Estás usando `synchronize: true` en desarrollo
+- TypeORM genera automáticamente los cambios
+- Cuando pases a producción, puedes generar la migración desde las entidades actuales
 
 ## Seed de Usuario Administrador
 
