@@ -1,0 +1,8 @@
+venv/
+*.mp3
+*.wav
+*.m4a
+*.mp4
+transcripcion.txt
+__pycache__/
+*.pyc
