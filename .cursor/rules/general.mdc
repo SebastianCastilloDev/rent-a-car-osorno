@@ -36,3 +36,4 @@ alwaysApply: true
 - Performance: usa índices en base de datos para campos de búsqueda frecuente.
 - Migraciones: crea migraciones para todos los cambios de esquema, nunca modifiques directamente.
 - Utiliza Yarn como gestor de paquetes en el backend y en el frontend.
+- No uses el tipo any en el código.

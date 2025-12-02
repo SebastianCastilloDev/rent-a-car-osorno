@@ -1,4 +1,97 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateVehiculoDto } from './create-vehiculo.dto';
+import {
+    IsInt,
+    IsOptional,
+    IsString,
+    Matches,
+    Max,
+    MaxLength,
+    Min,
+} from 'class-validator';
 
-export class UpdateVehiculoDto extends PartialType(CreateVehiculoDto) { }
+export class UpdateVehiculoDto {
+    @IsOptional()
+    @IsString()
+    @Matches(/^[A-Z]{4}\d{2}$|^[A-Z]{2}\d{4}$/, {
+        message:
+            'La patente debe tener formato chileno válido (ej: AABB12 o AA1234)',
+    })
+    patente?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(1)
+    dv?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(100)
+    proveedor?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    numeroFactura?: string;
+
+    @IsOptional()
+    fechaCompra?: Date;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    tipo?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    condicion?: string;
+
+    @IsOptional()
+    @IsInt()
+    @Min(1900)
+    @Max(new Date().getFullYear() + 1)
+    anio?: number;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    marca?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    modelo?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    motor?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(50)
+    chassis?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(30)
+    color?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(20)
+    transmision?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(20)
+    combustible?: string;
+
+    @IsOptional()
+    @IsString()
+    @MaxLength(100)
+    ubicacionActual?: string;
+
+    @IsOptional()
+    @IsString()
+    choferRut?: string;
+}

@@ -1,6 +1,25 @@
-import { PartialType } from '@nestjs/swagger';
-import { CreateRevisionTecnicaDto } from './create-revision-tecnica.dto';
+import {
+    IsDate,
+    IsEnum,
+    IsOptional,
+    IsString,
+} from 'class-validator';
+import { EstadoRevisionTecnica } from '../../../common/constants';
 
-export class UpdateRevisionTecnicaDto extends PartialType(
-  CreateRevisionTecnicaDto,
-) { }
+export class UpdateRevisionTecnicaDto {
+    @IsOptional()
+    @IsString()
+    vehiculoPatente?: string;
+
+    @IsOptional()
+    @IsDate()
+    fechaRevision?: Date;
+
+    @IsOptional()
+    @IsEnum(EstadoRevisionTecnica)
+    estado?: EstadoRevisionTecnica;
+
+    @IsOptional()
+    @IsString()
+    observaciones?: string;
+}

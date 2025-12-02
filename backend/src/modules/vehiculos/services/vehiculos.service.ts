@@ -25,9 +25,13 @@ export class VehiculosService {
       );
     }
 
+    // Convertir strings vacíos a undefined para evitar problemas con foreign keys
+    const choferRut = createVehiculoDto.choferRut?.trim() || undefined;
+
     const vehiculo = this.vehiculoRepository.create({
       ...createVehiculoDto,
       patente: patenteLimpia,
+      choferRut: choferRut,
     });
 
     return await this.vehiculoRepository.save(vehiculo);
@@ -67,7 +71,13 @@ export class VehiculosService {
   ): Promise<Vehiculo> {
     const vehiculo = await this.encontrarPorPatente(patente);
 
-    Object.assign(vehiculo, updateVehiculoDto);
+    // Convertir strings vacíos a undefined para evitar problemas con foreign keys
+    const datosActualizados = {
+      ...updateVehiculoDto,
+      choferRut: updateVehiculoDto.choferRut?.trim() || undefined,
+    };
+
+    Object.assign(vehiculo, datosActualizados);
     return await this.vehiculoRepository.save(vehiculo);
   }
 

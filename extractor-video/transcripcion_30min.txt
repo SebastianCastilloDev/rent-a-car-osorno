@@ -1,0 +1,1250 @@
+================================================================================
+TRANSCRIPCIÓN CON TIMESTAMPS - PRIMEROS 30 MINUTOS
+================================================================================
+
+[00:00:00 - 00:00:10] empresa interno y para eso necesitamos alguna otra manera armar un programa de sé
+
+[00:00:10 - 00:00:13] que a Felipe busques puede dar más de algo del tema de la película por el
+
+[00:00:13 - 00:00:15] problema de cualquier contrato.
+
+[00:00:15 - 00:00:23] Sí, y me he sido en la arco, que me permita tener la trasabilidad que posiblemente
+
+[00:00:23 - 00:00:27] vean más detalles de lo que necesitamos para poder llegar la trasabilidad de las
+
+[00:00:27 - 00:00:33] camionetas y también incluir que sea mixta, que me olviden incluir los tractores y
+
+[00:00:33 - 00:00:40] reentacar para poder llevar su mantenció de consumo y excepto rápido de consumo
+
+[00:00:40 - 00:00:41] taller.
+
+[00:00:41 - 00:00:47] Cuáles han sido más recurrentes de alguna otra manera los gastos de algún otro
+
+[00:00:47 - 00:00:50] vehículo que está gastando mar, gastando mes, que se ha sido recurrente.
+
+[00:00:50 - 00:00:55] La mejor idea es una alarma de cuando tiene que hacer sus próximas revisiones de acuerdo
+
+[00:00:55 - 00:00:58] al kilómetro a veces, sus cambios para ser este mantención, etcétera.
+
+[00:00:58 - 00:01:00] Es como viene más que lo que necesitamos.
+
+[00:01:00 - 00:01:05] En el fondo lo que te contaba que cada vehículo tenga suita, con un de uno se puede
+
+[00:01:05 - 00:01:14] meter y hacer revisión de todo el problema del tanico que he tenido de las martesiones
+
+[00:01:14 - 00:01:18] que se hicieron y poder ahí ingresar la pauta, aquí es lo que se les hizo.
+
+[00:01:18 - 00:01:25] Muchas que hayan tenido los vehículos por ejemplo también pueden hacer el ingreso
+
+[00:01:25 - 00:01:32] de eso y el caso de las maquinarias también las reparaciones que se las han realizado.
+
+[00:01:32 - 00:01:35] Luego, prendo súper bien.
+
+[00:01:35 - 00:01:41] En el fondo, más que programa de reentacar porque aquí lo que te contaba, nosotros no trabajamos
+
+[00:01:41 - 00:01:45] con reserva y atención que viene a tener nada, sino que más que nada es administrativo.
+
+[00:01:46 - 00:01:48] Sí, quiero ver la administra.
+
+[00:01:48 - 00:01:54] Sí, entonces más que nada de eso lleva registro, no sé, permiso de circulación.
+
+[00:01:54 - 00:02:01] Todo el fondo lo que requiere llevar registros de un vehículo.
+
+[00:02:01 - 00:02:05] El vehículo y más que nadie les cuesta su película.
+
+[00:02:05 - 00:02:08] Sí, de verlo entendiendo.
+
+[00:02:09 - 00:02:14] Y ya vi también la estructura de datos que tienen en su planilla.
+
+[00:02:14 - 00:02:19] Entonces, ¿quién te ha pasado aquí ya no encontré que no era web y si usted?
+
+[00:02:19 - 00:02:23] Sí, porque tenéis datos repetidos básicamente eso.
+
+[00:02:23 - 00:02:24] Sí.
+
+[00:02:24 - 00:02:35] Entonces, a ver, voy a compartirle ese demastirio para solucionarlo.
+
+[00:02:36 - 00:02:38] ¿Ven mi pantalla?
+
+[00:02:38 - 00:02:40] Sí, dice la verdad.
+
+[00:02:40 - 00:02:45] Bueno, entonces vamos a ponerlo un poquito zoom.
+
+[00:02:45 - 00:02:49] Aquí el gm y me ha ido a sacarle todas las columnas.
+
+[00:02:49 - 00:02:55] Entonces, claro, aquí hay cosa de información que tiene esto del vehículo repetido.
+
+[00:02:55 - 00:03:01] Entonces, sí, un poquito poco eficiente como se debería.
+
+[00:03:02 - 00:03:06] Entonces, vamos a acá, de aquí.
+
+[00:03:08 - 00:03:11] Ustedes actualmente tienen algo así, ¿sierto?
+
+[00:03:11 - 00:03:16] Entonces, no sé si lo revertir ahí, que le pongo ahí y tiene marca, modelo, el año.
+
+[00:03:16 - 00:03:21] Las multas esas cosas las tienen repetidas, tienen muchos campos repetidos.
+
+[00:03:21 - 00:03:24] Eso es lo que anotó por la estructura.
+
+[00:03:24 - 00:03:27] Nosotros tendríamos que hacer...
+
+[00:03:28 - 00:03:32] A ver, la otra imagen más bien algo así.
+
+[00:03:32 - 00:03:39] Entonces, nosotros tenemos una entidad como principal que el vehículo que va a tener esta información.
+
+[00:03:39 - 00:03:43] Luego, el chofer.
+
+[00:03:43 - 00:03:45] En el trase que nada, claro.
+
+[00:03:45 - 00:03:53] Claro. Y también un vehículo, no, un chofer puede manejar varios vehículos, así deciden yo el prototype.
+
+[00:03:54 - 00:04:02] Entonces, un vehículo también puede tener de cero a infinitas relaciones técnicas, permiso circulación, multa gasto.
+
+[00:04:02 - 00:04:05] No sé si la interpretación que hago ahí adecuada.
+
+[00:04:06 - 00:04:11] Sí, pero es uno de las partes, una tema proactiva, el sentido de que también...
+
+[00:04:11 - 00:04:19] Yo no sé cómo hacer lo, imagino que es partible, que también me lleve el kilómetro allí, que va a ser torrado con la cumpla, no sé,
+
+[00:04:20 - 00:04:25] ya no se escara en un pino cinco mil kilómetros porque yo la fue contra el cual porque todas las tengo con tarjetas copé,
+
+[00:04:25 - 00:04:30] cuando están obligados de alguna otra manera a entregarle el kilómetro allí y yo lo tengo en línea, en línea entre comillas,
+
+[00:04:30 - 00:04:36] donde yo lo puedo recogir de alguna parte de línea y que me dice, voy a estar en la manera atrás, no sé,
+
+[00:04:36 - 00:04:43] a quien este no es lo que está el cambio aceite, que me prenda un gran forman, un tractor que está 50 horas a hacer un cambio aceite,
+
+[00:04:44 - 00:04:50] no sé si me quedé, si, que le avise en el fondo, le comprendo.
+
+[00:04:50 - 00:04:58] Ya, entonces respecto como de la arquitectura estamos tarrazonable, lo que estoy haciendo aquí,
+
+[00:04:58 - 00:05:06] entonces faltaría que veas como la dada como del sistema de alarmas, ya quería eso.
+
+[00:05:07 - 00:05:19] Entonces, una pregunta que les quiero hacer, aquí tengo, entonces, más o menos cuatro en el tiempo de entrega del plazo esperado.
+
+[00:05:20 - 00:05:23] ¿Cuánto te demoré y tú la fui un proyecto de un evento tipo?
+
+[00:05:23 - 00:05:24] El lado de rey, un mes.
+
+[00:05:24 - 00:05:25] Estamos dentro del caso.
+
+[00:05:26 - 00:05:35] Un mes, pero si me apuro me demoro dos semanas, pero también ahí, si salen más de mal, ¿cómo?
+
+[00:05:36 - 00:05:37] ¿Pantenadía, bueno, entrega?
+
+[00:05:38 - 00:05:39] Estamos claro.
+
+[00:05:40 - 00:05:41] ¿Pensadelo que te quedan?
+
+[00:05:41 - 00:05:42] Sí, estamos en el plazo.
+
+[00:05:42 - 00:05:43] ¿Pensadelo que te mando?
+
+[00:05:44 - 00:05:45] Sí, estamos en el plazo.
+
+[00:05:46 - 00:05:47] Entonces, vamos a poner un mes.
+
+[00:05:47 - 00:05:57] No sé si yo quiero partir al menos el 2026 con un programa nuevo, pero también quiero tener la marcha blanca con rocido para que te lo cuya contigo.
+
+[00:05:57 - 00:06:04] Claro, sí que por ejemplo, si lo entregas bien ahí, por último tenemos dos semanas para ver que quizás
+
+[00:06:05 - 00:06:08] hay que regalar algo, les falta algo si lo podemos agregar algo.
+
+[00:06:08 - 00:06:10] ¿Estás en la marcha blanca?
+
+[00:06:11 - 00:06:13] Sí, es parte del proceso.
+
+[00:06:14 - 00:06:17] Eso siempre ocurre, siempre no le va mejorando cositas.
+
+[00:06:20 - 00:06:24] Ya, ¿usted me imagino que ustedes ambos son los que aprobaban lo que yo les voy a entregar?
+
+[00:06:25 - 00:06:26] Sí.
+
+[00:06:27 - 00:06:32] Bueno, entonces, ¿quién me aprobaban esto? ¿Sería rosío y usted cuándo era su nombre?
+
+[00:06:33 - 00:06:35] ¿Qué man? ¿Sería rosío?
+
+[00:06:35 - 00:06:36] Sí, no.
+
+[00:06:37 - 00:06:38] ¿Qué man?
+
+[00:06:41 - 00:06:46] Ya, hay un tema así a saber que cuando ya me hace...
+
+[00:06:46 - 00:06:55] Cuando ustedes me aceptan los cambios, por supuesto que son cambios conversados, la idea tampoco de estar cambiando siempre.
+
+[00:06:56 - 00:07:07] Ya, o sea, digamos que si ya te aceptan un cambio de algo y después se lo ocurre otra cosa, eso tendrían costo.
+
+[00:07:07 - 00:07:19] Eso es saber como para que lo tengamos. Por supuesto que ese algo infimuno, pero sí, de repente, a veces, muy delgada salí, y a veces, tenda cruzarse.
+
+[00:07:20 - 00:07:23] Entonces, ese sería como un punto.
+
+[00:07:23 - 00:07:24] Lo otro.
+
+[00:07:24 - 00:07:26] No, no, un cuaderno, porque no es traje mi cuaderno.
+
+[00:07:29 - 00:07:32] ¿Quieres un cuaderno? ¿Estás... las pelo?
+
+[00:07:36 - 00:07:38] Tengo un cuaderno.
+
+[00:07:38 - 00:07:39] Ya.
+
+[00:07:40 - 00:07:49] En la noticia, más o menos, a donde puse muy alta, no me acuerdo con el solo de otros puntos que agríe, llegando a la oficina donde tengo el cuaderno, te lo voy a...
+
+[00:07:49 - 00:07:54] A nota que más que nada, creo que es como agregar puntos de registro.
+
+[00:07:54 - 00:08:01] Ya, entonces justamente esa era la próxima pregunta que le iba a hacer que se vía a la información que yo no tenga.
+
+[00:08:01 - 00:08:05] Entonces, tengo que esperar allí el cuaderno.
+
+[00:08:05 - 00:08:07] Entonces, usted me va a mandar algunas fotos de machino.
+
+[00:08:08 - 00:08:11] Y dentro de la tarde, dentro de la tarde, les escribo.
+
+[00:08:11 - 00:08:14] No es un punto que me interesa también que incluye.
+
+[00:08:14 - 00:08:15] Ya.
+
+[00:08:15 - 00:08:17] Otra cosa.
+
+[00:08:17 - 00:08:28] Están dispuestos a gastar dinero mensualmente o quiere ir algo muy local, no sé, o quiere ir una aplicación de plegán y internet.
+
+[00:08:28 - 00:08:30] ¿Cuántos dinero hablamos?
+
+[00:08:30 - 00:08:37] De 7 a 30 dólares, son un damos una cosa así. Al mes.
+
+[00:08:37 - 00:08:45] Eso es lo que sale una aplicación web desplegada, digamos, esto te va a costar entre unos 7 a 30 dólares.
+
+[00:08:45 - 00:08:47] Desplegada a mí.
+
+[00:08:47 - 00:08:48] ¿Cómo?
+
+[00:08:48 - 00:08:52] ¿Cuánto me va a costar este tema a beber hecho para nosotros?
+
+[00:08:53 - 00:08:57] Lo voy a costar porque justamente para esto es la reunión.
+
+[00:08:57 - 00:09:00] Digamos para poder yo establecer ese valor.
+
+[00:09:00 - 00:09:01] ¿Se fijan?
+
+[00:09:01 - 00:09:04] También rango, o sea, es que están en un rango.
+
+[00:09:04 - 00:09:05] ¿Entender que estoy hablando?
+
+[00:09:05 - 00:09:11] Puede ir entre los 400, los 700, el millón va a ir dependiendo por ahí.
+
+[00:09:11 - 00:09:14] Depende de lo que tenga que hacer.
+
+[00:09:14 - 00:09:17] Es una sola vez lo que se va a hacer.
+
+[00:09:18 - 00:09:30] Y lo que yo tengo pensado es, digamos, que ustedes tengan la capacidad de tener la parte del computador,
+
+[00:09:30 - 00:09:35] usarlo en computador, seguramente con algún panel de administración que ustedes me van a solicitar,
+
+[00:09:35 - 00:09:39] que va a ser para ustedes, que los venís ten.
+
+[00:09:39 - 00:09:45] Y también las personas que no están estonados, no sé si será lo mismo operar o lo mismo choferir.
+
+[00:09:46 - 00:09:54] Aquí tengo la rosiva, la que de alguna forma va a consolidar la información y ella la va a ir.
+
+[00:09:54 - 00:09:59] ¿Cuál es la virtud de la web?
+
+[00:09:59 - 00:10:05] La portabilidad que en el fondo no tenga que ir al computador para conectarse,
+
+[00:10:05 - 00:10:08] entonces lo puede ver desde el celular.
+
+[00:10:08 - 00:10:12] Lo debéis disponible 24 o 7 de vos decieras.
+
+[00:10:13 - 00:10:17] Exactamente.
+
+[00:10:17 - 00:10:22] Exactamente te va a funcionar en un condizzo, no con eso se piscicula.
+
+[00:10:22 - 00:10:27] ¿Y con suelta hay límite de esos ingresos?
+
+[00:10:27 - 00:10:34] No. Hay unos límites, digamos, que tenéis que llegar como a 50 millones de regitos,
+
+[00:10:34 - 00:10:38] para que la base de datos ni ternella de passe a otra categoría.
+
+[00:10:39 - 00:10:43] Si no lo que te va a cobrar para hacer 7 dólares.
+
+[00:10:43 - 00:10:44] Perfecto.
+
+[00:10:44 - 00:10:46] Sí, eso es.
+
+[00:10:46 - 00:10:50] Podríamos hacer también un curso de nuevo de...
+
+[00:10:50 - 00:10:53] Y este es un chino de la agresión.
+
+[00:10:53 - 00:10:57] La cosilla que va a ver un chino también para los agresímpicos y el mejor que se muestra aquí, ¿de por eso?
+
+[00:10:57 - 00:11:03] Sí, esa también, de otra consulta que la extensibilidad,
+
+[00:11:03 - 00:11:07] o sea esto podría seguir creciendo, ya veo que sí.
+
+[00:11:08 - 00:11:13] Y también.
+
+[00:11:13 - 00:11:14] En octubre, ¿no?
+
+[00:11:14 - 00:11:16] Y que hay tantas unidades.
+
+[00:11:16 - 00:11:20] Unidades de flota, unidades agroquímicos.
+
+[00:11:20 - 00:11:25] Y pero si no hay acceso, si no hay acceso, yo creo que tú tienes que ir a la agresión,
+
+[00:11:25 - 00:11:28] pero el agroquímico también tiene el acceso frío.
+
+[00:11:28 - 00:11:31] Y si no hay acceso frío, también hay acceso para cantar.
+
+[00:11:31 - 00:11:33] Pero en unidades pueden solicitar de que te encanclare.
+
+[00:11:33 - 00:11:36] Entonces, si yo pichas, por ejemplo, reentacar, ¿no?
+
+[00:11:36 - 00:11:37] ¿No?
+
+[00:11:37 - 00:11:38] Lo que es...
+
+[00:11:38 - 00:11:39] Rosío, se ostian?
+
+[00:11:39 - 00:11:40] Díganas.
+
+[00:11:40 - 00:11:45] Rosío está con la potestada de poder negociar contigo este todo el tema.
+
+[00:11:45 - 00:11:52] Hay una opción también de re ser hacia otro tipo de condultivo inventario,
+
+[00:11:52 - 00:11:55] de modiga, de agresimicos, que también usted había que organizar a música.
+
+[00:11:55 - 00:11:56] Si que estaba a partiría, y...
+
+[00:11:56 - 00:11:59] Y por lo que yo tenía experiencia y cual está en dentro.
+
+[00:11:59 - 00:12:01] Entonces, a lo mejor, lo que esté pidiendo,
+
+[00:12:01 - 00:12:02] de que en caso de llegar a cuerto,
+
+[00:12:02 - 00:12:04] por llegar a acuerdo, tratemos de que a lo mejor tengamos
+
+[00:12:04 - 00:12:07] en las dos semanas de marcha blanca para que de alguna manera
+
+[00:12:07 - 00:12:12] ni niero, ya bastamos 100% al dedillo con pulido, no sé si me
+
+[00:12:12 - 00:12:13] ha caché.
+
+[00:12:13 - 00:12:14] Sí, sí, sí.
+
+[00:12:14 - 00:12:20] Cosa de tener una aplicación ya andando el 15 de diciembre.
+
+[00:12:20 - 00:12:22] ¿Y realmente?
+
+[00:12:22 - 00:12:24] Yo tengo dos semanas de prueba y me lo tanto la hemos
+
+[00:12:24 - 00:12:27] probando que los avancen, si la ha recorciido jugando y hoy
+
+[00:12:27 - 00:12:30] el 7 de siempre está perso, me la muestra a mí y yo digo
+
+[00:12:30 - 00:12:31] si es lo que queremos, listo, vamos.
+
+[00:12:31 - 00:12:34] Vamos después con los avancos, vamos con los avancos que
+
+[00:12:34 - 00:12:38] estén disante, oigan, que hay idea que frente a cártame,
+
+[00:12:38 - 00:12:39] me contiene los tractores.
+
+[00:12:39 - 00:12:40] Sí.
+
+[00:12:40 - 00:12:41] ¿Qué le dije?
+
+[00:12:41 - 00:12:42] ¿No imaginaba?
+
+[00:12:42 - 00:12:43] ¿Por qué?
+
+[00:12:43 - 00:12:44] ¿Qué le han votado?
+
+[00:12:44 - 00:12:45] ¿Qué se pasa?
+
+[00:12:45 - 00:12:46] No, no.
+
+[00:12:46 - 00:12:47] Y le ponemos muy bueno.
+
+[00:12:47 - 00:12:48] Le ponemos muy bien.
+
+[00:12:48 - 00:12:49] Mota 1, moto 9.
+
+[00:12:49 - 00:12:50] ¿Qué pasa?
+
+[00:12:50 - 00:12:51] ¿Qué trabaja?
+
+[00:12:51 - 00:12:52] ¿No?
+
+[00:12:52 - 00:12:53] ¿Qué?
+
+[00:12:53 - 00:12:54] ¿Y qué le di por lo que hay?
+
+[00:12:54 - 00:12:57] Bueno, ¿me le todo eso que está hablando lo podemos hacer?
+
+[00:12:57 - 00:12:59] No es problema.
+
+[00:12:59 - 00:13:02] Trabaja con trabaja, si los avancos de tres personas,
+
+[00:13:02 - 00:13:06] yo lo conversamos con él, lo final, lo final con la rosiva.
+
+[00:13:06 - 00:13:07] Pero no, no, no, no.
+
+[00:13:07 - 00:13:08] ¿Hay que hacerlo?
+
+[00:13:08 - 00:13:09] ¿Trabajemos?
+
+[00:13:09 - 00:13:10] Sí.
+
+[00:13:10 - 00:13:15] Oigan, otra cosa que yo quiero saber, aquí respecto de los roles,
+
+[00:13:15 - 00:13:18] digamos, ¿quiénes van a usar estas personas?
+
+[00:13:18 - 00:13:22] ¿Qué perfiles tienen en el sentido tecnológico?
+
+[00:13:22 - 00:13:24] ¿Son?
+
+[00:13:24 - 00:13:25] ¿Son?
+
+[00:13:25 - 00:13:26] ¿Y los digamos, son conductores?
+
+[00:13:26 - 00:13:27] ¿Son?
+
+[00:13:27 - 00:13:29] No, no, no, no, no.
+
+[00:13:29 - 00:13:31] Aquí, los conductores no tienen ninguna exceso nada.
+
+[00:13:31 - 00:13:34] Todo se va a malicar a nivel de campo con profesionales
+
+[00:13:34 - 00:13:37] que son agronos profesionales universitarios,
+
+[00:13:37 - 00:13:42] y tienen su tema en línea o en la encomuncura,
+
+[00:13:42 - 00:13:46] y por acá, rosivo que hay acto el control del sistema que va
+
+[00:13:46 - 00:13:49] a ser básicamente la que más va a interactuar con él.
+
+[00:13:49 - 00:13:52] Ella va a hacer después la aventa de trabajo, que es ahí.
+
+[00:13:52 - 00:13:54] Ella está interactuando de extractor aquí,
+
+[00:13:54 - 00:13:58] sortor alarma, tiene que ir el gallo que va a estar
+
+[00:13:58 - 00:14:00] en servicio de atención, tiene que estar coordinado
+
+[00:14:00 - 00:14:02] un dos semanas más, porque un dos semanas más
+
+[00:14:02 - 00:14:05] tendrá puntos de 300 horas de cambio aceite y tiene que estar
+
+[00:14:05 - 00:14:06] ser proactivo.
+
+[00:14:06 - 00:14:08] De hecho, un sistema tiene que vermida a hacer excepción de
+
+[00:14:08 - 00:14:12] ver a proactiva, tener información de lo que consume el libro,
+
+[00:14:12 - 00:14:14] de qué el practón le está gastando más revuesto,
+
+[00:14:14 - 00:14:16] por cierto, un verario, a tenido el practón,
+
+[00:14:16 - 00:14:18] ya tenido otros problemas operarios,
+
+[00:14:18 - 00:14:19] después de ejecutar, nada,
+
+[00:14:19 - 00:14:22] para poder detectar, y yo tomo decisiones y que cao el trofeo,
+
+[00:14:22 - 00:14:24] que a por cierto, no sé si es negativo.
+
+[00:14:24 - 00:14:25] Sí, generación de reportes,
+
+[00:14:25 - 00:14:28] vamos a hacer la sílgenia de la senda de reportes
+
+[00:14:28 - 00:14:32] individuales, por el tipo, y también globales.
+
+[00:14:32 - 00:14:35] Sí, también es importante mucho que en el caso de los tractores,
+
+[00:14:35 - 00:14:37] también si yo puedo binchar,
+
+[00:14:37 - 00:14:40] puedo tener el consumo del medio de sus tractores dentro del cama,
+
+[00:14:40 - 00:14:41] por lo que se me ha hecho de ella hacer.
+
+[00:14:41 - 00:14:43] Sí, es lo que yo le digo, sí.
+
+[00:14:43 - 00:14:44] Al movimiento.
+
+[00:14:44 - 00:14:44] ¿Cacto de nada?
+
+[00:14:44 - 00:14:46] Los alineas, por ejemplo, de los tractores.
+
+[00:14:46 - 00:14:48] Y el consumo mensual que me guarda,
+
+[00:14:48 - 00:14:51] y por ejemplo, si yo le digo que los tractores me consumieron,
+
+[00:14:51 - 00:14:54] no sé, cuatro mil libros y tengo de esto mil libros,
+
+[00:14:54 - 00:14:56] y yo tengo que salir y cuadrar que esos cinco mil,
+
+[00:14:56 - 00:14:58] y lo que yo tengo en que comía en ese campo,
+
+[00:14:58 - 00:15:00] efectivamente, se pidieron cinco mil y no se es mil,
+
+[00:15:00 - 00:15:03] porque si tengo seis mil peridos y tengo cinco mil adaptados
+
+[00:15:03 - 00:15:06] en que esto que lo adaptaba en la inérea,
+
+[00:15:06 - 00:15:07] simplemente también me arromen,
+
+[00:15:07 - 00:15:08] o no sé si me meté y que sí, también,
+
+[00:15:08 - 00:15:10] de esta senda y el cultura del pedróleo.
+
+[00:15:10 - 00:15:11] ¿Me está habiendo aquí, quiero?
+
+[00:15:11 - 00:15:13] Sí, sí, yo he hecho eso.
+
+[00:15:13 - 00:15:14] Exactamente.
+
+[00:15:14 - 00:15:19] Sí, así que lo comprendo sobre ver el tema de la afinación.
+
+[00:15:19 - 00:15:20] ¿Qué le vamos a hacer?
+
+[00:15:20 - 00:15:23] Ahí está el detalle, pero el importante se ha cambiado
+
+[00:15:23 - 00:15:25] que la rocía os voy a vuchar,
+
+[00:15:25 - 00:15:28] porque acá tenemos cinco campos,
+
+[00:15:28 - 00:15:30] y cada campo tiene tractores diferentes,
+
+[00:15:30 - 00:15:32] entonces, en verdad, el terro va a altar todos los campos,
+
+[00:15:32 - 00:15:34] pero también tengo que esperar a asignar
+
+[00:15:34 - 00:15:36] que este tractor, este, este, y este,
+
+[00:15:36 - 00:15:38] desde uno al cinco está en el sal campo.
+
+[00:15:38 - 00:15:41] Abre esto su cinco y me despliega el sistema,
+
+[00:15:41 - 00:15:42] no sé si me lo estáis.
+
+[00:15:42 - 00:15:45] Y ella pueda seleccionar.
+
+[00:15:45 - 00:15:46] Sí.
+
+[00:15:46 - 00:15:48] No soy programadora, no solo venís contemplada,
+
+[00:15:48 - 00:15:49] pero quiero hablar.
+
+[00:15:49 - 00:15:52] El notímpico.
+
+[00:15:52 - 00:15:53] El notímpico, justamente,
+
+[00:15:53 - 00:15:56] más el tipo de tareas se desarrolla software.
+
+[00:15:56 - 00:15:59] Así que, así que estamos, estamos, digamos,
+
+[00:15:59 - 00:16:01] el línea con eso.
+
+[00:16:01 - 00:16:02] Oiga.
+
+[00:16:02 - 00:16:05] Es verdad, porque ese, ese es el que también es lo que
+
+[00:16:05 - 00:16:08] tienen entregaron y no es suficiente,
+
+[00:16:08 - 00:16:10] no tiene la información que se necesita
+
+[00:16:10 - 00:16:12] ni la forma de registrar.
+
+[00:16:12 - 00:16:14] Entonces, por eso que...
+
+[00:16:14 - 00:16:15] Sí.
+
+[00:16:15 - 00:16:19] Mira, usted, el tímico broma es el tímico en el franco.
+
+[00:16:19 - 00:16:21] Es muy típico venir desde aquí,
+
+[00:16:21 - 00:16:23] desde esto, es el que, claro,
+
+[00:16:23 - 00:16:28] que no tienen una automatización, digamos, muy adecuada.
+
+[00:16:28 - 00:16:29] Y es que están anotando esto,
+
+[00:16:29 - 00:16:32] comiendo, pegando a dos lados a otros.
+
+[00:16:32 - 00:16:36] Digamos, ¿túes quieres tener al minister los vehículos?
+
+[00:16:36 - 00:16:38] Sí.
+
+[00:16:38 - 00:16:42] Pero para que vean, por ejemplo,
+
+[00:16:42 - 00:16:46] este es un producto que yo tengo, ya me había
+
+[00:16:46 - 00:16:48] yo estado saliendo un poco el desarrollo media.
+
+[00:16:48 - 00:16:53] Estas están agarrando yo este producto.
+
+[00:16:53 - 00:16:57] Y una de las cosas que nosotros hacemos aquí,
+
+[00:16:57 - 00:17:01] les voy a mostrar algo.
+
+[00:17:01 - 00:17:05] A ver...
+
+[00:17:05 - 00:17:06] Y en el lado de...
+
+[00:17:06 - 00:17:08] No, tengo que ir mecánico,
+
+[00:17:08 - 00:17:10] la más circunta y el mecánico.
+
+[00:17:10 - 00:17:12] Te voy a mostrar una cosita.
+
+[00:17:13 - 00:17:19] Por ejemplo, aquí tengo un orden de taller mecánico.
+
+[00:17:19 - 00:17:24] ¿Qué sería buena que lo que la hora en el que eres de gánico?
+
+[00:17:24 - 00:17:25] Sala de la pinta, ¿verdad?
+
+[00:17:25 - 00:17:28] Con todo el dato, tú tienes que caminete a paz y saludo, ¿sí?
+
+[00:17:28 - 00:17:30] Sí, pues sí, te lo voy a dar así, ¿no?
+
+[00:17:30 - 00:17:32] Este es el tímico, ¿túes que es el tímico?
+
+[00:17:32 - 00:17:33] El orden de la cera.
+
+[00:17:33 - 00:17:34] Si salen el tímico,
+
+[00:17:34 - 00:17:35] los datos pa, chau,
+
+[00:17:35 - 00:17:36] ¿sí?
+
+[00:17:36 - 00:17:37] ¿Pierre el judo de la cera?
+
+[00:17:37 - 00:17:38] El tímico, ¿sí?
+
+[00:17:38 - 00:17:39] El tímico, ¿sí?
+
+[00:17:39 - 00:17:40] ¿Qué es el idea al reglanco?
+
+[00:17:40 - 00:17:41] ¿Tendría?
+
+[00:17:41 - 00:17:42] Sí.
+
+[00:17:43 - 00:17:44] Si tú tienes que camcarte para aquí,
+
+[00:17:44 - 00:17:46] si es admirable, probable,
+
+[00:17:46 - 00:17:49] y yo quiero información.
+
+[00:17:49 - 00:17:51] Eso es lo que llevamos.
+
+[00:17:51 - 00:17:52] ¿Qué dijo la Cera?
+
+[00:17:52 - 00:17:53] Las órdenas de comprar,
+
+[00:17:53 - 00:17:55] que el mismo programa de las Marta de Núcrata,
+
+[00:17:55 - 00:17:56] para mi Cera, ¿verdad?
+
+[00:17:58 - 00:18:00] Podemos hacerla así, básicamente,
+
+[00:18:00 - 00:18:02] que encontré la información y la.
+
+[00:18:02 - 00:18:06] Entonces yo, por ejemplo, aquí yo puedo tener un vehículo
+
+[00:18:06 - 00:18:07] seleccionarlo, ¿sí?
+
+[00:18:07 - 00:18:09] Y ya tienes esta información.
+
+[00:18:09 - 00:18:10] ¿Te fijas?
+
+[00:18:10 - 00:18:11] Claro.
+
+[00:18:11 - 00:18:13] Y ya tienes que ver, también un vehículo.
+
+[00:18:13 - 00:18:17] Te fijas, también otra cosa que podemos hacer
+
+[00:18:17 - 00:18:19] el tema de tomar fotos, ¿sí?
+
+[00:18:19 - 00:18:21] ¿Vas a subirlas desde una galería?
+
+[00:18:21 - 00:18:23] ¿Por el documentario cada foto?
+
+[00:18:23 - 00:18:24] ¿En caso de que se ha de ser?
+
+[00:18:24 - 00:18:25] El contrato, sublez,
+
+[00:18:25 - 00:18:27] contrado de firmas, corpada de que volvó la entrega,
+
+[00:18:27 - 00:18:29] que firmes su contrato, que quede todo el dinero,
+
+[00:18:29 - 00:18:31] que es pepeeta, que es activa de esta recepcionada,
+
+[00:18:31 - 00:18:33] que está contando bien importante, que está con sus seguros al día,
+
+[00:18:33 - 00:18:36] no es solamente el seguro, pero es el mismo y el seguro,
+
+[00:18:36 - 00:18:39] sino que también con sus seguros globales dentro de la madrín.
+
+[00:18:39 - 00:18:40] ¿Tienes?
+
+[00:18:41 - 00:18:43] Todo lo seguro, todo lo seguro.
+
+[00:18:43 - 00:18:48] Sí, hay un consignatro para sentirse, ¿sí?
+
+[00:18:48 - 00:18:49] ¿Dónde?
+
+[00:18:49 - 00:18:50] Mira, ¿víos?
+
+[00:18:50 - 00:18:51] ¿Está bien con misión?
+
+[00:18:51 - 00:18:52] ¿En pedazos?
+
+[00:18:52 - 00:18:53] No, está bien.
+
+[00:18:53 - 00:18:55] Pero, ¿estás permitido que el curación donde el parado de que parara
+
+[00:18:55 - 00:18:57] los prensos de curación siempre es bien?
+
+[00:18:57 - 00:18:59] Oye, ¿qué me hizo el suave?
+
+[00:18:59 - 00:19:02] ¿Pienes sentido el tema de la revisión técnica?
+
+[00:19:02 - 00:19:03] Está bien, ¿sí?
+
+[00:19:03 - 00:19:04] Sí, está bien.
+
+[00:19:04 - 00:19:06] ¿En primer activo, el tangivo al día, el que te digo,
+
+[00:19:06 - 00:19:09] es que la revisión técnica está por pensar?
+
+[00:19:09 - 00:19:10] Vaya y no se indica.
+
+[00:19:10 - 00:19:11] ¿No?
+
+[00:19:11 - 00:19:12] ¿Se lo tienen?
+
+[00:19:12 - 00:19:13] Claro.
+
+[00:19:13 - 00:19:14] ¿Cóseas lógicas?
+
+[00:19:14 - 00:19:15] No se tiene que achar.
+
+[00:19:15 - 00:19:17] ¿Cóseas que todo lo que te quiere, no veis?
+
+[00:19:17 - 00:19:21] Porque en este caso, una tarea dígica que se hace esto,
+
+[00:19:21 - 00:19:24] de generar digamos como un reporte,
+
+[00:19:24 - 00:19:27] en que lo van a meter sal en el PDF,
+
+[00:19:27 - 00:19:32] ¿dónde se ven este tipo de cosas? ¿Se fijan?
+
+[00:19:32 - 00:19:33] Claro.
+
+[00:19:33 - 00:19:38] Podemos hacer todo lo que se da relevante al respecto.
+
+[00:19:38 - 00:19:40] A ver, aquí tengo alguna.
+
+[00:19:40 - 00:19:41] Debo servir ver.
+
+[00:19:41 - 00:19:42] ¿Qué te da?
+
+[00:19:42 - 00:19:46] Sería mamá del sistema algo así como esto.
+
+[00:19:46 - 00:19:47] Esa está.
+
+[00:19:47 - 00:19:50] Entonces aquí, esto va a ir dependiendo de lo que me pidan.
+
+[00:19:50 - 00:19:53] Esto es lo que me han pedido otros clientes.
+
+[00:19:53 - 00:19:57] Entonces aquí yo puedo sacar un reporte tan detalleado
+
+[00:19:57 - 00:19:58] como ustedes lo quieran.
+
+[00:19:58 - 00:20:01] Esto obviamente que son datos de prueba,
+
+[00:20:01 - 00:20:04] pero por ejemplo aquí podemos ver el botoncito
+
+[00:20:04 - 00:20:06] que está en color verde, el rojo,
+
+[00:20:06 - 00:20:08] el no aplica.
+
+[00:20:08 - 00:20:09] Se fijan.
+
+[00:20:09 - 00:20:12] Aquí también el cuidado de presupuesto.
+
+[00:20:12 - 00:20:15] Esto es con disación, en caso de esto yo.
+
+[00:20:15 - 00:20:16] Se fijan.
+
+[00:20:16 - 00:20:20] Entonces hay posibilidad de desarrollar todo ese tipo de tareas
+
+[00:20:20 - 00:20:22] que ustedes me piden.
+
+[00:20:22 - 00:20:27] Deportarte tener los campos,
+
+[00:20:27 - 00:20:31] los campos digamos las variables que vamos a anotar,
+
+[00:20:31 - 00:20:34] lo que se va a registrar.
+
+[00:20:34 - 00:20:37] Y le vamos dando forma.
+
+[00:20:37 - 00:20:40] Le dejas que sea también, por ejemplo,
+
+[00:20:40 - 00:20:43] para otra cosa, es que esto se...
+
+[00:20:43 - 00:20:47] Tienes que moverse adaptas.
+
+[00:20:47 - 00:20:49] Voy a cambiar de tipo de empresa,
+
+[00:20:49 - 00:20:51] aquí no sé si está también, pero...
+
+[00:20:51 - 00:20:54] Quiero mostrarte que claro,
+
+[00:20:54 - 00:20:56] esto se adapta también a dispositivos móviles
+
+[00:20:56 - 00:20:59] como si no estuviera viendo del celular.
+
+[00:20:59 - 00:21:00] ¿Qué fija?
+
+[00:21:00 - 00:21:03] ¿Qué es el caso de que andan en terreno o algo así?
+
+[00:21:03 - 00:21:05] ¿Nes necesito generar una orden?
+
+[00:21:05 - 00:21:06] Me con el tablet.
+
+[00:21:06 - 00:21:08] Exactamente.
+
+[00:21:08 - 00:21:09] Que hay que ver.
+
+[00:21:09 - 00:21:11] O puede regular el paguete completo,
+
+[00:21:11 - 00:21:13] nos revisan, porque no es que también interesa la web
+
+[00:21:13 - 00:21:14] para tener el tablet,
+
+[00:21:14 - 00:21:15] porque si vale un campo,
+
+[00:21:15 - 00:21:17] hoy el día.
+
+[00:21:17 - 00:21:20] Yo creo que estamos más malo aliados.
+
+[00:21:20 - 00:21:22] Aquí, andemos un paquete, quizás,
+
+[00:21:22 - 00:21:25] por el inventario igual,
+
+[00:21:25 - 00:21:27] y está ayudando un tema abreso,
+
+[00:21:27 - 00:21:29] y vamos a ir un paquete global y está.
+
+[00:21:29 - 00:21:31] Y con inventario lo dedico
+
+[00:21:31 - 00:21:33] para los puntos a registrar,
+
+[00:21:33 - 00:21:35] porque por ejemplo, en la menina que me mostraré el preo,
+
+[00:21:35 - 00:21:37] tiene solamente los litros o kilos,
+
+[00:21:37 - 00:21:39] pero las peces de vencimiento no están.
+
+[00:21:39 - 00:21:40] Pues eso es...
+
+[00:21:40 - 00:21:41] Hay que estarlo.
+
+[00:21:41 - 00:21:42] Hay que estarlo.
+
+[00:21:42 - 00:21:43] Esa está.
+
+[00:21:43 - 00:21:44] ¿Qué es el bien?
+
+[00:21:44 - 00:21:46] Quiero un rosillo con la boletada,
+
+[00:21:46 - 00:21:49] voy a conversar contigo y voy cerrando.
+
+[00:21:49 - 00:21:50] Y eso.
+
+[00:21:50 - 00:21:51] ¿Vale esto?
+
+[00:21:51 - 00:21:52] ¿Vale esto?
+
+[00:21:52 - 00:21:53] ¿Vale esto?
+
+[00:21:53 - 00:21:55] Voy a llamar la perca a tuya de la la.
+
+[00:21:55 - 00:21:56] ¿Qué es lo?
+
+[00:21:56 - 00:21:59] Y una última tarea que también estipiga
+
+[00:21:59 - 00:22:02] en este tipo de sistemas de poder enviar un correo.
+
+[00:22:02 - 00:22:05] Entonces, aquí yo estoy enviando un correo desde...
+
+[00:22:05 - 00:22:07] Claro, que está directamente de ahí.
+
+[00:22:07 - 00:22:08] Claro.
+
+[00:22:08 - 00:22:10] Es la sábado a mi correo electrónico, por ejemplo.
+
+[00:22:10 - 00:22:13] Sí, sí lo puedo hacer, ¿eh?
+
+[00:22:13 - 00:22:14] Sí, por ejemplo,
+
+[00:22:14 - 00:22:16] fue un solo programa.
+
+[00:22:16 - 00:22:17] Un solo programa.
+
+[00:22:17 - 00:22:18] ¿Sí?
+
+[00:22:18 - 00:22:21] Y donde está la unidad de reentracar
+
+[00:22:21 - 00:22:23] y la otra unidad de agroquímico,
+
+[00:22:23 - 00:22:25] porque en el fondo va a ser un programa de intrativo.
+
+[00:22:26 - 00:22:29] De su vermición y control.
+
+[00:22:29 - 00:22:30] Sí.
+
+[00:22:30 - 00:22:33] Es posible que, por ejemplo,
+
+[00:22:33 - 00:22:37] lo que reentracar quiere con un usuario
+
+[00:22:37 - 00:22:39] y una clave para poder ingresar.
+
+[00:22:39 - 00:22:43] Sí, de hecho, a ver, un tema...
+
+[00:22:43 - 00:22:47] Es esto, mira, esto lo voy a montar.
+
+[00:22:47 - 00:22:49] Oye, que así, por ejemplo, no sé,
+
+[00:22:49 - 00:22:52] si se me canabrón o no, porque quiere ver los agroquímicos,
+
+[00:22:52 - 00:22:55] no tenda acceso a meterse en lo que reentracar, por ejemplo.
+
+[00:22:55 - 00:22:58] Claro, por ejemplo, en este caso,
+
+[00:22:58 - 00:23:00] aquí uno puede crear una cuenta,
+
+[00:23:00 - 00:23:03] o bien, la opción que yo sugiero es...
+
+[00:23:03 - 00:23:07] No sé qué correo corporativo son ustedes,
+
+[00:23:07 - 00:23:09] Microsoft o Gmail,
+
+[00:23:09 - 00:23:11] o no tienen preferencia respecto.
+
+[00:23:11 - 00:23:14] Sí, son A, A, B, Microsoft.
+
+[00:23:14 - 00:23:18] Ya podríamos iniciar sesor con la cuenta de Microsoft.
+
+[00:23:18 - 00:23:20] Un poquito más problemático que con la Google,
+
+[00:23:20 - 00:23:21] pero se puede hacer.
+
+[00:23:21 - 00:23:25] Ya, o bien, crear una cosa como de nombre de usuario
+
+[00:23:25 - 00:23:26] y contraiseña.
+
+[00:23:26 - 00:23:27] Te fijas.
+
+[00:23:27 - 00:23:31] Y después ya el usuario inicia sesión, ¿no?
+
+[00:23:31 - 00:23:33] Su correo contra esa...
+
+[00:23:33 - 00:23:37] O en el caso del inventario que cada uno ingrese con su usuario
+
+[00:23:37 - 00:23:39] a... no sé, su campo,
+
+[00:23:39 - 00:23:41] pero yo tengo acceso a ver...
+
+[00:23:41 - 00:23:43] Yo tengo que supervisar y controlar los agroquímicos.
+
+[00:23:43 - 00:23:45] Entonces, yo tengo acceso a...
+
+[00:23:45 - 00:23:50] como no sé, administradora, a reinición de todo.
+
+[00:23:50 - 00:23:53] Sí, como tener un panel de control de ese tú.
+
+[00:23:53 - 00:23:55] Exacto.
+
+[00:23:55 - 00:23:56] Sí, va, va.
+
+[00:23:56 - 00:23:58] Es una tarea que...
+
+[00:23:58 - 00:23:59] Que frebe, te dice,
+
+[00:23:59 - 00:24:02] no tengo que definir contigo...
+
+[00:24:02 - 00:24:04] En este caso, sería yo,
+
+[00:24:04 - 00:24:07] también que sería el predo y...
+
+[00:24:07 - 00:24:09] ¿Tú también pejaros, gimito?
+
+[00:24:09 - 00:24:11] El predo yo y voy a...
+
+[00:24:11 - 00:24:13] Claro, sería...
+
+[00:24:13 - 00:24:17] tres personas que tendríamos que tener ese acceso a todo.
+
+[00:24:17 - 00:24:18] Comprendo que...
+
+[00:24:18 - 00:24:21] Te le fundo para supervisar lo que hay.
+
+[00:24:21 - 00:24:23] Sí, te parece...
+
+[00:24:23 - 00:24:29] Entonces, lo que quedaría que me envía es el tema del cuaderno que me dijiste que tenías.
+
+[00:24:29 - 00:24:32] Y con ese yo puedo hacer...
+
+[00:24:32 - 00:24:34] ver qué cosa me faltan, bueno,
+
+[00:24:34 - 00:24:36] también el tema de los agroquímicos.
+
+[00:24:36 - 00:24:38] ¿Verd qué es lo que no tan...
+
+[00:24:38 - 00:24:40] Es súper básico.
+
+[00:24:40 - 00:24:41] Ya.
+
+[00:24:41 - 00:24:43] Es súper básico.
+
+[00:24:43 - 00:24:45] Es una columna...
+
+[00:24:45 - 00:24:48] La parte de arriba, donde están los nombres de cada campo
+
+[00:24:48 - 00:24:49] y hacia abajo,
+
+[00:24:49 - 00:24:51] los nombres de los agroquímicos
+
+[00:24:51 - 00:24:54] y entre un medio poner los nitrójoquinos de lo que hay.
+
+[00:24:54 - 00:24:55] Es un con lo que...
+
+[00:24:55 - 00:24:56] El cimiento...
+
+[00:24:56 - 00:24:57] Ya, ya.
+
+[00:24:57 - 00:24:58] Es el...
+
+[00:24:58 - 00:24:59] Eso no hay nada...
+
+[00:24:59 - 00:25:00] Es más típico.
+
+[00:25:00 - 00:25:02] Es súper simple lo que hay.
+
+[00:25:02 - 00:25:03] Ya, sí.
+
+[00:25:03 - 00:25:06] Lo que se necesita es que en el fondo,
+
+[00:25:06 - 00:25:09] poder ingresar, no sé,
+
+[00:25:09 - 00:25:12] ver la disponibilidad que hay por campo,
+
+[00:25:12 - 00:25:15] y poder recitar los vencimientos de los agroquímicos.
+
+[00:25:15 - 00:25:16] Ya.
+
+[00:25:16 - 00:25:17] Claro, claro.
+
+[00:25:17 - 00:25:18] Y la cantidad de aguridad de...
+
+[00:25:18 - 00:25:20] Y la idea es que tú...
+
+[00:25:20 - 00:25:21] Y lo tengo.
+
+[00:25:21 - 00:25:22] Y la ubicación.
+
+[00:25:22 - 00:25:24] Porque muchas veces te tenés a un campo,
+
+[00:25:24 - 00:25:26] pero no lo hegan en otra ubicación.
+
+[00:25:26 - 00:25:28] Es consolidado, no sé si lo que...
+
+[00:25:28 - 00:25:31] Como está el campo de aquí,
+
+[00:25:31 - 00:25:33] pero por ejemplo,
+
+[00:25:33 - 00:25:35] o sea, si lo tengo,
+
+[00:25:35 - 00:25:37] si lo tengo,
+
+[00:25:37 - 00:25:39] si lo tengo,
+
+[00:25:39 - 00:25:41] si lo tengo,
+
+[00:25:41 - 00:25:42] por ejemplo,
+
+[00:25:42 - 00:25:43] o sea, ¿qué?
+
+[00:25:43 - 00:25:44] Tengo un infosato,
+
+[00:25:44 - 00:25:45] que es más común que hubo.
+
+[00:25:45 - 00:25:46] Un infosato y un pugo,
+
+[00:25:46 - 00:25:47] la abodega,
+
+[00:25:47 - 00:25:48] en el dinero,
+
+[00:25:48 - 00:25:49] y al cinco campos.
+
+[00:25:49 - 00:25:50] Y de repente,
+
+[00:25:50 - 00:25:51] tengo que ir infosato,
+
+[00:25:51 - 00:25:53] no sé, que tengo...
+
+[00:25:53 - 00:25:54] No sé.
+
+[00:25:54 - 00:25:56] Quien es tu libro de infosato,
+
+[00:25:56 - 00:25:58] el campo de aquí,
+
+[00:25:58 - 00:26:00] y lo está llegando un pedido
+
+[00:26:00 - 00:26:02] por doscientos libros de infosato.
+
+[00:26:02 - 00:26:04] El infosato del campo de aquí
+
+[00:26:04 - 00:26:06] y yo lo deducan la versión de temporada.
+
+[00:26:06 - 00:26:07] Entonces, peceiro,
+
+[00:26:07 - 00:26:08] sacarlo de este campo,
+
+[00:26:08 - 00:26:09] asalgo el dinero,
+
+[00:26:10 - 00:26:11] y comprar el dinero,
+
+[00:26:11 - 00:26:12] dejarlo en un stop.
+
+[00:26:12 - 00:26:13] No sé si lo tengo.
+
+[00:26:13 - 00:26:17] 
+
+[00:26:18 - 00:26:19] Hay que velar...
+
+[00:26:20 - 00:26:21] Deje la Nieto como un espacio,
+
+[00:26:21 - 00:26:25] este otro llega con una fecha de incidentes nuevas para el de la nioma,
+
+[00:26:25 - 00:26:33] como se tiene que dar como una espacio, se puede dejar como una espacio para poner observaciones,
+
+[00:26:33 - 00:26:35] frente acá...
+
+[00:26:35 - 00:26:36] Totalmente.
+
+[00:26:36 - 00:26:41] Sí, pero es mucho más fácil si tú tienes en cada campo,
+
+[00:26:41 - 00:26:45] pasá, lo paga y de acá hay que ver que hay una situación,
+
+[00:26:45 - 00:26:48] entonces el paso va cada, esta les dé el 200 litros,
+
+[00:26:48 - 00:26:51] la compañía tiene que hacer esta empresa, es...
+
+[00:26:51 - 00:26:53] ahora este destino, no sé si me gusta,
+
+[00:26:53 - 00:26:54] ¿no?
+
+[00:26:54 - 00:26:55] Aquí no perdamos la trazabilidad.
+
+[00:26:55 - 00:26:58] ¿Y la forma de cómo se tiene el muro de distribuir?
+
+[00:26:58 - 00:27:00] Sí, sí, sí, sí.
+
+[00:27:00 - 00:27:02] Entonces agroquíbicos,
+
+[00:27:02 - 00:27:06] voy a tener la trazabilidad de los movimientos, digamos.
+
+[00:27:06 - 00:27:07] Claro.
+
+[00:27:07 - 00:27:09] Bueno, a tener...
+
+[00:27:09 - 00:27:10] La trazabilidad.
+
+[00:27:10 - 00:27:13] Y bueno, me gustaría ver una tablita.
+
+[00:27:14 - 00:27:18] Para que no hacemos el vídeo y ve que a todos y digamos como para la documentación,
+
+[00:27:18 - 00:27:21] en este momento, vamos a tener nosotros al respecto.
+
+[00:27:21 - 00:27:25] Ya, yo estoy súper claro de lo que quieren.
+
+[00:27:25 - 00:27:29] Y también, lo más importante es...
+
+[00:27:29 - 00:27:31] Ah, no, ya lo tengo notado.
+
+[00:27:31 - 00:27:36] Es un sistema como de alarmas, donde tú podáis entrar.
+
+[00:27:37 - 00:27:45] Y ya sea que te envíe un correo o bien que tú puedes entrar y ver cuáles son los ídeme de los cuales tienes que ponerle atención.
+
+[00:27:45 - 00:27:46] Me imagino.
+
+[00:27:46 - 00:27:51] Eso es lo más importante que están buscando, la impresión que me da.
+
+[00:27:51 - 00:27:55] Es la alarma de fondo, que lo que se va a vencer.
+
+[00:27:55 - 00:27:59] No sé, puede parecer un padre ahí, no sé, en la lista donde...
+
+[00:27:59 - 00:28:01] Sí, sí, sí.
+
+[00:28:01 - 00:28:03] O que también de color algo.
+
+[00:28:03 - 00:28:05] Sí, así va a ser.
+
+[00:28:06 - 00:28:10] Ya, bueno, desde súper claro, ahora sí, ahora sí, con esta conversa les puedo dar un preso,
+
+[00:28:10 - 00:28:14] así que le voy a enviar una cotización y se le envío.
+
+[00:28:14 - 00:28:16] Eso sería bueno.
+
+[00:28:16 - 00:28:17] No, no, no.
+
+[00:28:17 - 00:28:18] Que te muene, pues.
+
+[00:28:18 - 00:28:20] Es un problema con el mismo tiempo, ¿no?
+
+[00:28:20 - 00:28:21] A ustedes.
+
+[00:28:21 - 00:28:22] Hasta luego.
+
+[00:28:22 - 00:28:23] Ciao.
+
+[00:28:23 - 00:28:24] Ciao.
+
+[00:28:35 - 00:28:57] Qué funktionas?
+
+[00:28:59 - 00:29:00] Que passetlock.
+
+[00:29:00 - 00:29:02] ¿Qué es posible?
+
+[00:29:21 - 00:29:24] Nunca. Nunca vas.
+
+[00:29:31 - 00:29:32] ¿Y diente la cerca?
+
+[00:29:32 - 00:29:34] Sí, donde se nos habita esto?
+
+[00:29:34 - 00:29:37] El chileno, por ejemplo, le van a quitar la restriosa.
+
+[00:29:37 - 00:29:39] Pero la idea era la estrella de la mañana y tenía que comer.
+
+[00:29:39 - 00:29:41] Esa es la vantiela de comiela.
+
+[00:29:41 - 00:29:43] Ahora yo lo comimos la tarde.
+
+[00:29:43 - 00:29:45] ¿Ustedes comimos la mitad de mitad?
+
+[00:29:45 - 00:29:46] Eso fue la...
+
+[00:29:46 - 00:29:47] Yo no comí la mitad de eso.
+
+[00:29:47 - 00:29:49] Yo me comí la farofa que la dejé a ella.
+
+[00:29:51 - 00:29:52] Bebé.
+
+[00:29:53 - 00:29:55] Se llama teavo, peju.
+
+[00:29:55 - 00:29:57] Lo han venido diciendo que el costante de acá se está en contra de los mujeres
+
+[00:29:57 - 00:29:59] cuando dimos en los resultados que la oposición en la idea de la aportarse.
+
